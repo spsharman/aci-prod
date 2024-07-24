@@ -1,0 +1,385 @@
+{
+    "totalCount": "1",
+    "imdata": [
+        {
+            "fvTenant": {
+                "attributes": {
+                    "annotation": "",
+                    "descr": "",
+                    "dn": "uni/tn-esx-infrastructure",
+                    "name": "esx-infrastructure",
+                    "nameAlias": "",
+                    "ownerKey": "",
+                    "ownerTag": ""
+                },
+                "children": [
+                    {
+                        "vnsSvcCont": {
+                            "attributes": {
+                                "annotation": ""
+                            }
+                        }
+                    },
+                    {
+                        "fvRsTenantMonPol": {
+                            "attributes": {
+                                "annotation": "",
+                                "tnMonEPGPolName": ""
+                            }
+                        }
+                    },
+                    {
+                        "fvAp": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "host-mgmt",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "prio": "unspecified"
+                            },
+                            "children": [
+                                {
+                                    "fvAEPg": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "",
+                                            "exceptionTag": "",
+                                            "floodOnEncap": "disabled",
+                                            "fwdCtrl": "",
+                                            "hasMcastSource": "no",
+                                            "isAttrBasedEPg": "no",
+                                            "matchT": "AtleastOne",
+                                            "name": "10.237.98.128_25",
+                                            "nameAlias": "",
+                                            "pcEnfPref": "unenforced",
+                                            "prefGrMemb": "exclude",
+                                            "prio": "unspecified",
+                                            "shutdown": "no"
+                                        },
+                                        "children": [
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-992",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-101-102/pathep-[vpc_to_r42-tor]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-992",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-101-102/pathep-[vpc_to_r07-tor]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-992",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-103-104/pathep-[vpc_to_r23-hx-prod-fi-b]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-992",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-103-104/pathep-[vpc_to_r23-hx-prod-fi-a]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsDomAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "bindingType": "none",
+                                                        "classPref": "encap",
+                                                        "customEpgName": "",
+                                                        "delimiter": "",
+                                                        "encap": "unknown",
+                                                        "encapMode": "auto",
+                                                        "epgCos": "Cos0",
+                                                        "epgCosPref": "disabled",
+                                                        "instrImedcy": "lazy",
+                                                        "lagPolicyName": "",
+                                                        "netflowDir": "both",
+                                                        "netflowPref": "disabled",
+                                                        "numPorts": "0",
+                                                        "portAllocation": "none",
+                                                        "primaryEncap": "unknown",
+                                                        "primaryEncapInner": "unknown",
+                                                        "resImedcy": "immediate",
+                                                        "secondaryEncapInner": "unknown",
+                                                        "switchingMode": "native",
+                                                        "tDn": "uni/phys-esx-mgmt",
+                                                        "untagged": "no",
+                                                        "vnetOnly": "no"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsCustQosPol": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "tnQosCustomPolName": ""
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsBd": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "tnFvBDName": "10.237.98.128_25"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvAp": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "vmotion",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "prio": "unspecified"
+                            },
+                            "children": [
+                                {
+                                    "fvAEPg": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "",
+                                            "exceptionTag": "",
+                                            "floodOnEncap": "disabled",
+                                            "fwdCtrl": "",
+                                            "hasMcastSource": "no",
+                                            "isAttrBasedEPg": "no",
+                                            "matchT": "AtleastOne",
+                                            "name": "192.168.1.128_128",
+                                            "nameAlias": "",
+                                            "pcEnfPref": "unenforced",
+                                            "prefGrMemb": "exclude",
+                                            "prio": "unspecified",
+                                            "shutdown": "no"
+                                        },
+                                        "children": [
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-986",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-103-104/pathep-[vpc_to_r23-hx-prod-fi-b]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-986",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-103-104/pathep-[vpc_to_r23-hx-prod-fi-a]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsDomAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "bindingType": "none",
+                                                        "classPref": "encap",
+                                                        "customEpgName": "",
+                                                        "delimiter": "",
+                                                        "encap": "unknown",
+                                                        "encapMode": "auto",
+                                                        "epgCos": "Cos0",
+                                                        "epgCosPref": "disabled",
+                                                        "instrImedcy": "lazy",
+                                                        "lagPolicyName": "",
+                                                        "netflowDir": "both",
+                                                        "netflowPref": "disabled",
+                                                        "numPorts": "0",
+                                                        "portAllocation": "none",
+                                                        "primaryEncap": "unknown",
+                                                        "primaryEncapInner": "unknown",
+                                                        "resImedcy": "immediate",
+                                                        "secondaryEncapInner": "unknown",
+                                                        "switchingMode": "native",
+                                                        "tDn": "uni/phys-esx-mgmt",
+                                                        "untagged": "no",
+                                                        "vnetOnly": "no"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsCustQosPol": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "tnQosCustomPolName": ""
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsBd": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "tnFvBDName": "192.168.1.x"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvAp": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "hx-storage",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "prio": "unspecified"
+                            },
+                            "children": [
+                                {
+                                    "fvAEPg": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "",
+                                            "exceptionTag": "",
+                                            "floodOnEncap": "disabled",
+                                            "fwdCtrl": "",
+                                            "hasMcastSource": "no",
+                                            "isAttrBasedEPg": "no",
+                                            "matchT": "AtleastOne",
+                                            "name": "192.168.1.0_128",
+                                            "nameAlias": "",
+                                            "pcEnfPref": "unenforced",
+                                            "prefGrMemb": "exclude",
+                                            "prio": "unspecified",
+                                            "shutdown": "no"
+                                        },
+                                        "children": [
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-987",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-103-104/pathep-[vpc_to_r23-hx-prod-fi-a]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsPathAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "encap": "vlan-987",
+                                                        "instrImedcy": "immediate",
+                                                        "mode": "regular",
+                                                        "primaryEncap": "unknown",
+                                                        "tDn": "topology/pod-1/protpaths-103-104/pathep-[vpc_to_r23-hx-prod-fi-b]"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsDomAtt": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "bindingType": "none",
+                                                        "classPref": "encap",
+                                                        "customEpgName": "",
+                                                        "delimiter": "",
+                                                        "encap": "unknown",
+                                                        "encapMode": "auto",
+                                                        "epgCos": "Cos0",
+                                                        "epgCosPref": "disabled",
+                                                        "instrImedcy": "lazy",
+                                                        "lagPolicyName": "",
+                                                        "netflowDir": "both",
+                                                        "netflowPref": "disabled",
+                                                        "numPorts": "0",
+                                                        "portAllocation": "none",
+                                                        "primaryEncap": "unknown",
+                                                        "primaryEncapInner": "unknown",
+                                                        "resImedcy": "immediate",
+                                                        "secondaryEncapInner": "unknown",
+                                                        "switchingMode": "native",
+                                                        "tDn": "uni/phys-esx-mgmt",
+                                                        "untagged": "no",
+                                                        "vnetOnly": "no"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsCustQosPol": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "tnQosCustomPolName": ""
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsBd": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "tnFvBDName": "192.168.1.x"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

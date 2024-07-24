@@ -1,0 +1,127 @@
+#
+# This tenant is used for lab infrastructure connectivity 
+#
+#
+---
+apic:
+  tenants:
+    - name: lab-infrastructure
+      description: Routable IP range
+
+      application_profiles:      
+        - name: 'top-of-rack-management-subnets'
+          description: EPGs provide the VLAN backing for application workloads
+          endpoint_groups:      
+            - name: rack-07
+              bridge_domain: 10.237.96.64_29
+              physical_domains:
+                - vpc_to_r07-tor
+              static_ports:
+                - channel: "vpc_to_r07-tor"
+                  vlan: 507
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: rack-08
+              bridge_domain: 10.237.96.72_29
+              physical_domains:
+                - vpc_to_r08-tor
+              static_ports:
+                - channel: "vpc_to_r08-tor"
+                  vlan: 508
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: rack-22
+              bridge_domain: 10.237.96.184_29
+              physical_domains:
+                - vpc_to_r22-tor
+              static_ports:
+                - channel: "vpc_to_r22-tor"
+                  vlan: 522
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: rack-42
+              bridge_domain: 10.237.97.112_29
+              physical_domains:
+                - vpc_to_r42-tor
+              static_ports:
+                - channel: "vpc_to_r42-tor"
+                  vlan: 542
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+        - name: 'device-management-subnets'
+          description: EPGs provide the VLAN backing for application workloads
+          endpoint_groups: 
+            - name: '10.237.97.176_28'
+              bridge_domain: 10.237.97.176_28
+              alias: vlan-997
+              physical_domains:
+                - subnet_10.237.97.176_28
+              static_ports:
+                - channel: "vpc_to_r07-tor"
+                  vlan: 997
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - node_id: 101
+                  port: 5
+                  vlan: 997
+                  mode: native
+                  deployment_immediacy: immediate
+                - node_id: 101
+                  port: 6
+                  vlan: 997
+                  mode: native
+                  deployment_immediacy: immediate
+                - node_id: 102
+                  port: 5
+                  vlan: 997
+                  mode: native
+                  deployment_immediacy: immediate
+                - node_id: 102
+                  port: 6
+                  vlan: 997
+                  mode: native
+                  deployment_immediacy: immediate
+
+        - name: 'lab-services'
+          description: EPGs provide the VLAN backing for application workloads
+          endpoint_groups:      
+            - name: 'core-services'
+              bridge_domain: 10.237.97.128_27
+              physical_domains:
+                - hyperflex
+              static_ports:
+                - channel: "vpc_to_r23-hx-prod-fi-a"
+                  vlan: 991
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-b"
+                  vlan: 991
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+
+            - name: 'lab-desktops'
+              bridge_domain: 10.237.97.160_28
+              physical_domains:
+                - hyperflex
+              static_ports:
+                - channel: "vpc_to_r23-hx-prod-fi-a"
+                  vlan: 988
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-b"
+                  vlan: 988
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
