@@ -1,0 +1,913 @@
+#
+# This tenant is used for common connectivity 
+#
+#
+---
+apic:
+  tenants:
+    - name: common
+      description: Routable IP range
+
+# Policies
+      policies:
+        ospf_interface_policies:
+          - name: OSPF_p2p
+            cost: unspecified
+            passive_interface: false
+            mtu_ignore: false
+            advertise_subnet: true
+            bfd: false
+            hello_interval: 10
+            dead_interval: 40
+            network_type: p2p
+            priority: 1
+            lsa_retransmit_interval: 5
+            lsa_transmit_delay: 1
+
+# Filters
+      filters:
+# ICMP
+        - name: 'icmp'
+          entries:
+            - name: 'icmp'
+              protocol: icmp
+# Any
+        - name: 'permit-src-any-dst-any'
+          entries:
+            - name: 'permit-src-any-dst-any'
+              ethertype: unspecified
+
+# TCP filters
+        - name: 'permit-tcp-src-any-dst-22'
+          entries:
+            - name: 'permit-tcp-src-any-dst-22'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 22
+              destination_to_port: 22
+
+        - name: 'permit-tcp-src-any-dst-23'
+          entries:
+            - name: 'permit-tcp-src-any-dst-23'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 23
+              destination_to_port: 23
+
+        - name: 'permit-tcp-src-any-dst-80'
+          entries:
+            - name: 'permit-tcp-src-any-dst-80'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 80
+              destination_to_port: 80
+
+        - name: 'permit-tcp-src-any-dst-443'
+          entries:
+            - name: 'permit-tcp-src-any-dst-443'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 443
+              destination_to_port: 443
+
+        - name: 'permit-tcp-src-any-dst-1111'
+          entries:
+            - name: 'permit-tcp-src-any-dst-1111'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 1111
+              destination_to_port: 1111
+
+        - name: 'permit-tcp-src-any-dst-1112'
+          entries:
+            - name: 'permit-tcp-src-any-dst-1112'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 1112
+              destination_to_port: 1112
+
+        - name: 'permit-tcp-src-any-dst-1168'
+          entries:
+            - name: 'permit-tcp-src-any-dst-1168'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 1168
+              destination_to_port: 1168
+
+        - name: 'permit-tcp-src-any-dst-1169'
+          entries:
+            - name: 'permit-tcp-src-any-dst-1169'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 1169
+              destination_to_port: 1169
+
+        - name: 'permit-tcp-src-any-dst-1433'
+          entries:
+            - name: 'permit-tcp-src-any-dst-1433'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 1433
+              destination_to_port: 1433
+
+        - name: 'permit-tcp-src-any-dst-1455'
+          entries:
+            - name: 'permit-tcp-src-any-dst-1455'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 1455
+              destination_to_port: 1455
+
+        - name: 'permit-tcp-src-any-dst-3306'
+          entries:
+            - name: 'permit-tcp-src-any-dst-3306'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 3306
+              destination_to_port: 3306
+
+        - name: 'permit-tcp-src-any-dst-3307'
+          entries:
+            - name: 'permit-tcp-src-any-dst-3307'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 3307
+              destination_to_port: 3307
+
+        - name: 'permit-tcp-src-any-dst-5551'
+          entries:
+            - name: 'permit-tcp-src-any-dst-5551'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 5551
+              destination_to_port: 5551
+
+        - name: 'permit-tcp-src-any-dst-5671'
+          entries:
+            - name: 'permit-tcp-src-any-dst-5671'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 5671
+              destination_to_port: 5671
+
+        - name: 'permit-tcp-src-any-dst-6443'
+          entries:
+            - name: 'permit-tcp-src-any-dst-6443'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 6443
+              destination_to_port: 6443
+
+        - name: 'permit-tcp-src-any-dst-6666'
+          entries:
+            - name: 'permit-tcp-src-any-dst-6666'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 6666
+              destination_to_port: 6666
+
+        - name: 'permit-tcp-src-any-dst-7777'
+          entries:
+            - name: 'permit-tcp-src-any-dst-7777'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 7777
+              destination_to_port: 7777
+
+        - name: 'permit-tcp-src-any-dst-8086'
+          entries:
+            - name: 'permit-tcp-src-any-dst-8086'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 8086
+              destination_to_port: 8086
+
+        - name: 'permit-tcp-src-any-dst-8443'
+          entries:
+            - name: 'permit-tcp-src-any-dst-8443'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 8443
+              destination_to_port: 8443
+
+        - name: 'permit-tcp-src-any-dst-9898'
+          entries:
+            - name: 'permit-tcp-src-any-dst-9898'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 9898
+              destination_to_port: 9898
+
+        - name: 'permit-tcp-src-any-dst-9999'
+          entries:
+            - name: 'permit-tcp-src-any-dst-9999'
+              ethertype: ipv4
+              protocol: tcp
+              destination_from_port: 9999
+              destination_to_port: 9999
+
+# UDP filters
+        - name: 'permit-udp-src-any-dst-53'
+          entries:
+            - name: 'permit-udp-src-any-dst-53'
+              ethertype: ipv4
+              protocol: udp
+              destination_from_port: 53
+              destination_to_port: 53
+
+        - name: 'permit-udp-src-any-dst-123'
+          entries:
+            - name: 'permit-udp-src-any-dst-123'
+              ethertype: ipv4
+              protocol: udp
+              destination_from_port: 123
+              destination_to_port: 123
+
+        - name: 'permit-udp-src-any-dst-4444'
+          entries:
+            - name: 'permit-udp-src-any-dst-4444'
+              ethertype: ipv4
+              protocol: udp
+              destination_from_port: 4444
+              destination_to_port: 4444
+
+# Contracts
+      contracts:
+        - name: intra-tenant
+          description: vzAny is contract Consumer and Provider
+          scope: context
+          subjects:
+            - name: permit-src-any-dst-any
+              filters: 
+                - filter: permit-src-any-dst-any
+
+# VRFs
+      vrfs:
+        - name: common.vrf-01
+          description: configured with NAC
+          # alias: vrf-01
+          contracts:
+            providers:
+              - intra-tenant
+            consumers:
+              - intra-tenant
+
+# L3outs
+      l3outs:
+        - name: common.vrf-01-ospf-area-0.0.0.0
+          # nodes:
+          #   - node_id: 101
+          #     router_id: 5.5.5.5
+          #     router_id_as_loopback: true
+          #     static_routes:
+          #       - prefix: 2.2.2.0/24
+          #         description: My Desc
+          #         preference: 1
+          #         next_hops:
+          #           - ip: 6.6.6.6
+          #     interfaces:
+          #       - channel: VPC1
+          #         svi: true
+          #         scope: local
+          #         vlan: 301
+          #         ip_a: 14.14.14.1/24
+          #         ip_b: 14.14.14.2/24
+          #         ip_shared: 14.14.14.3/24
+          #         mode: native 
+
+          description: configured with NAC
+          vrf: common.vrf-01
+          domain: common.vrf-01
+          ospf:
+            area: 0.0.0.0
+            area_type: regular
+# Nodes
+          node_profiles:
+            - name: border-leafs
+              nodes:
+                - node_id: 103
+                  router_id: 103.1.1.1
+                - node_id: 104
+                  router_id: 104.1.1.1
+# Interfaces
+              interface_profiles:
+                - name: leaf-103-eth6
+                  interfaces:
+                    - node_id: 103
+                      port: 6
+                      ip: 10.237.99.242/30
+                      mtu: inherit
+                  ospf:
+                    policy: OSPF_p2p
+
+                - name: leaf-104-eth6
+                  interfaces:
+                    - node_id: 104
+                      port: 6
+                      ip: 10.237.99.246/30
+                      mtu: inherit
+                  ospf:
+                    policy: OSPF_p2p
+
+#                 - name: vpc_to_r07-tor
+                  # interfaces:
+                  #   - channel: VPC1
+                      # svi: true
+                      # scope: local
+                      # vlan: 301
+                      # ip_a: 14.14.14.1/24
+                      # ip_b: 14.14.14.2/24
+                      # ip_shared: 14.14.14.3/24
+
+# extEPG all external subnets
+          external_endpoint_groups:
+            - name: all-external-subnets
+              subnets:
+                - prefix: 0.0.0.0/0
+
+# Bridge Domains
+      bridge_domains:
+        - name: 10.237.96.16_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.17/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.24_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.25/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.32_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.33/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.40_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.41/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.48_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.49/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.56_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.57/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.64_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.65/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.72_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.73/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.80_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.81/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.88_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.89/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.96_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.97/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.104_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.105/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.112_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.113/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.120_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.121/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.128_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.129/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.152_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.153/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.184_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.185/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.192_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.193/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.96.240_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.96.241/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.88_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.89/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.112_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.113/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.128_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.129/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.160_28
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.161/28
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.176_28
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.177/28
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.192_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.193/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.97.224_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.225/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.98.0_25
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.98.1/25
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.98.128_25
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.98.129/25
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.0_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.99.1/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.80_28
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.99.81/28
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.96_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.99.97/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.160_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.99.161/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.128_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.99.129/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.248_30
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          # subnets:
+          #   - ip: 10.237.99.248/30
+          #     public: true
+          #     private: false
+          #     shared: false
+          #     nd_ra_prefix: false
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.252_30
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          # subnets:
+          #   - ip: 10.237.99.248/30
+          #     public: true
+          #     private: false
+          #     shared: false
+          #     nd_ra_prefix: false
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.101.0_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.101.1/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 64.103.44.48_28
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 64.103.44.49/28
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 64.103.44.64_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 64.103.44.65/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 64.103.44.96_28
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 64.103.44.97/28
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 192.168.1.1_25
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 192.168.1.1/25
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 192.168.1.128_25
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 192.168.1.129/25
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 192.168.2.0_24
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 192.168.2.1/24
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 192.168.3.0_24
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 192.168.3.1/24
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 192.168.8.0_24
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 192.168.8.1/24
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 192.168.81.0_24
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 192.168.81.1/24
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0

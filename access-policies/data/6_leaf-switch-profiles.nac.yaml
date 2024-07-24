@@ -1,0 +1,45 @@
+apic:
+  new_interface_configuration: false
+  access_policies:  
+
+# Leaf switch profile
+    leaf_switch_profiles:
+      - name: aci-prod-leaf-101
+        selectors:
+          - name: leaf-101
+            node_blocks:
+              - name: leaf-101
+                from: 101
+                to: 101
+        interface_profiles:
+          - aci-prod-leaf-101
+
+      - name: aci-prod-leaf-102
+        selectors:
+          - name: leaf-102
+            node_blocks:
+              - name: leaf-102
+                from: 102
+                to: 102
+        interface_profiles:
+          - aci-prod-leaf-102
+
+      - name: aci-prod-leaf-103
+        selectors:
+          - name: leaf-103
+            node_blocks:
+              - name: leaf-103
+                from: 103
+                to: 103
+        interface_profiles:
+          - aci-prod-leaf-103
+
+      - name: aci-prod-leaf-104
+        selectors:
+          - name: leaf-104
+            node_blocks:
+              - name: leaf-104
+                from: 104
+                to: 104
+        interface_profiles:
+          - aci-prod-leaf-104

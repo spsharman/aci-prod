@@ -1,0 +1,154 @@
+apic:
+  new_interface_configuration: false
+  access_policies:  
+
+# Leaf interface profile
+    leaf_interface_profiles:
+
+# Leaf-101
+      - name: aci-prod-leaf-101
+        selectors:
+          - name: firewall-management
+            policy_group: firewall-management
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 5
+                to_port: 5
+              - name: block-2
+                description: configured by NAC
+                from_port: 6
+                to_port: 6
+
+          - name: vpc_to_r07-tor
+            policy_group: vpc_to_r07-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 17
+                to_port: 17
+
+          - name: vpc_to_r08-tor
+            policy_group: vpc_to_r08-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 18
+                to_port: 18
+
+          - name: vpc_to_r22-tor
+            policy_group: vpc_to_r22-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 32
+                to_port: 32
+
+          - name: vpc_to_r42-tor
+            policy_group: vpc_to_r42-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 52
+                to_port: 52
+
+# Leaf-102                
+      - name: aci-prod-leaf-102
+        selectors:
+          - name: firewall-management
+            policy_group: firewall-management
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 5
+                to_port: 5
+              - name: block-2
+                description: configured by NAC
+                from_port: 6
+                to_port: 6
+
+          - name: vpc_to_r07-tor
+            policy_group: vpc_to_r07-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 17
+                to_port: 17
+
+          - name: vpc_to_r08-tor
+            policy_group: vpc_to_r08-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 18
+                to_port: 18
+
+          - name: vpc_to_r22-tor
+            policy_group: vpc_to_r22-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 32
+                to_port: 32
+
+          - name: vpc_to_r42-tor
+            policy_group: vpc_to_r42-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 52
+                to_port: 52
+
+# Leaf-103
+      - name: aci-prod-leaf-103
+        selectors:
+          - name: core-routers
+            policy_group: core-routers
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 6
+                to_port: 6
+
+          - name: vpc_to_r23-hx-prod-fi-a
+            policy_group: vpc_to_r23-hx-prod-fi-a
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 1
+                to_port: 1
+
+          - name: vpc_to_r23-hx-prod-fi-b
+            policy_group: vpc_to_r23-hx-prod-fi-b
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 2
+                to_port: 2
+
+# Leaf-104
+      - name: aci-prod-leaf-104
+        selectors:
+          - name: core-routers
+            policy_group: core-routers
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 6
+                to_port: 6
+
+          - name: vpc_to_r23-hx-prod-fi-a
+            policy_group: vpc_to_r23-hx-prod-fi-a
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 1
+                to_port: 1
+
+          - name: vpc_to_r23-hx-prod-fi-b
+            policy_group: vpc_to_r23-hx-prod-fi-b
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 2
+                to_port: 2

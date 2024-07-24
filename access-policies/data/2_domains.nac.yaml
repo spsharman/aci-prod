@@ -1,0 +1,77 @@
+apic:
+  new_interface_configuration: false
+  access_policies:
+
+# Physical Domains
+    physical_domains:
+      - name: hyperflex
+        vlan_pool: hyperflex
+
+      - name: subnet_10.237.97.176_28
+        vlan_pool: subnet_10.237.97.176_28
+
+      - name: vpc_to_r07-tor
+        vlan_pool: vpc_to_r07-tor
+
+      - name: vpc_to_r08-tor
+        vlan_pool: vpc_to_r08-tor
+
+      - name: vpc_to_r22-tor
+        vlan_pool: vpc_to_r22-tor
+
+      - name: vpc_to_r42-tor
+        vlan_pool: vpc_to_r42-tor
+
+# L3 Domains
+    routed_domains:
+      - name: common.vrf-01
+
+#     routed_domains:
+#       - name: ajshahid.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#         security_domains:
+#           - ajshahid.vrf-01
+#       - name: conmurph-01.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#         security_domains:
+#           - conmurph
+#       - name: conmurph-01.vrf-02
+#         vlan_pool: hx-dev-01-vds-02
+#         security_domains:
+#           - conmurph
+#       - name: conmurph-02.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#         security_domains:
+#           - conmurph
+#       - name: conmurph-02.vrf-02
+#         vlan_pool: hx-dev-01-vds-02
+#         security_domains:
+#           - conmurph
+#       - name: conmurph.vrf-01
+#         vlan_pool: ucsc-c220m5-vds-01
+#         security_domains:
+#           - conmurph
+#       - name: containers.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: demo.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: demo-01.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: demo-02.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: demo-03.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: demo-05.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: mgmt_inb
+#         vlan_pool: mgmt_inb
+#       - name: multisite
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: shared-services.vrf-01
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: shared-services.vrf-01-static-routes
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: shared-services.vrf-02
+#         vlan_pool: hx-dev-01-vds-02
+#       - name: shared-services.vrf-03
+#         vlan_pool: hx-dev-01-vds-02

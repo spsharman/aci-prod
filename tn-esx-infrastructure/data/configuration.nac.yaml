@@ -1,0 +1,71 @@
+#
+# This tenant is used for esx-infrastructure connectivity 
+#
+#
+---
+apic:
+  tenants:
+    - name: esx-infrastructure
+      description: Routable IP range
+
+      application_profiles:      
+        - name: 'host-networking'
+          # description: 
+          endpoint_groups:      
+            - name: 'host-mgmt'
+              bridge_domain: 10.237.98.128_25
+              physical_domains:
+                - hyperflex
+              static_ports:
+                - channel: "vpc_to_r07-tor"
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r42-tor"
+                  vlan: 992
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-a"
+                  vlan: 992
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-b"
+                  vlan: 992
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+
+            - name: 'vmotion'
+              bridge_domain: 192.168.1.x
+              physical_domains:
+                - hyperflex
+              static_ports:
+                - channel: "vpc_to_r23-hx-prod-fi-a"
+                  vlan: 986
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-b"
+                  vlan: 986
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+
+            - name: 'hx-storage'
+              bridge_domain: 192.168.1.x
+              physical_domains:
+                - hyperflex
+              static_ports:
+                - channel: "vpc_to_r23-hx-prod-fi-a"
+                  vlan: 987
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-b"
+                  vlan: 987
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
