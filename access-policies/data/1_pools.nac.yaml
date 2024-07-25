@@ -4,6 +4,10 @@ apic:
 
 # VLAN pools  
     vlan_pools:
+      - name: vpc_to_lab-gateway
+        allocation: static
+
+
       - name: vpc_to_r07-tor
         allocation: static
         ranges:
@@ -28,6 +32,22 @@ apic:
             allocation: inherit
             role: external
 
+      - name: vpc_to_r33-tor
+        allocation: static
+        ranges:
+          - from: 533
+            to: 533
+            allocation: inherit
+            role: external
+
+      - name: vpc_to_r35-tor
+        allocation: static
+        ranges:
+          - from: 535
+            to: 535
+            allocation: inherit
+            role: external
+
       - name: vpc_to_r42-tor
         allocation: static
         ranges:
@@ -41,6 +61,54 @@ apic:
         ranges:
           - from: 997
             to: 997
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.97.192_27
+        allocation: static
+        ranges:
+          - from: 994
+            to: 994
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.99.0_27
+        allocation: static
+        ranges:
+          - from: 990
+            to: 990
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.99.128_27
+        allocation: static
+        ranges:
+          - from: 979
+            to: 979
+            allocation: inherit
+            role: external
+
+      - name: subnet_192.168.2.0_24
+        allocation: static
+        ranges:
+          - from: 980
+            to: 980
+            allocation: inherit
+            role: external
+
+      - name: subnet_192.168.3.0_24
+        allocation: static
+        ranges:
+          - from: 985
+            to: 985
+            allocation: inherit
+            role: external
+
+      - name: subnet_192.168.8.0_24
+        allocation: static
+        ranges:
+          - from: 995
+            to: 995
             allocation: inherit
             role: external
 

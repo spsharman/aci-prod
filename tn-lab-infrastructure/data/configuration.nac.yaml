@@ -45,6 +45,28 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
+            - name: rack-33
+              bridge_domain: 10.237.97.40_29
+              physical_domains:
+                - vpc_to_r33-tor
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 533
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: rack-35
+              bridge_domain: 10.237.97.40_29
+              physical_domains:
+                - vpc_to_r35-tor
+              static_ports:
+                - channel: "vpc_to_r35-tor"
+                  vlan: 535
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
             - name: rack-42
               bridge_domain: 10.237.97.112_29
               physical_domains:
@@ -89,6 +111,108 @@ apic:
                   port: 6
                   vlan: 997
                   mode: native
+                  deployment_immediacy: immediate
+
+            - name: '10.237.97.192_27'
+              bridge_domain: 10.237.97.192_27
+              alias: vlan-994
+              physical_domains:
+                - subnet_10.237.97.192_27
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 994
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 994
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: '10.237.99.0_27'
+              bridge_domain: 10.237.99.0_27
+              alias: vlan-994
+              physical_domains:
+                - subnet_10.237.99.0_27
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 990
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 990
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: '10.237.99.128_27'
+              bridge_domain: 10.237.99.128_27
+              alias: vlan-994
+              physical_domains:
+                - subnet_10.237.99.128_27
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 979
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 979
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: '192.168.2.0_24'
+              bridge_domain: 192.168.2.0_24
+              alias: vlan-980
+              physical_domains:
+                - subnet_192.168.2.0_24
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 980
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 980
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: '192.168.3.0_24'
+              bridge_domain: 192.168.3.0_24
+              alias: vlan-985
+              physical_domains:
+                - subnet_192.168.3.0_24
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 985
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 985
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: '192.168.8.0_24'
+              bridge_domain: 192.168.8.0_24
+              alias: vlan-995
+              physical_domains:
+                - subnet_192.168.8.0_24
+              static_ports:
+                - channel: "vpc_to_r33-tor"
+                  vlan: 995
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 995
+                  node_id: 101
+                  node2_id: 102
                   deployment_immediacy: immediate
 
         - name: 'lab-services'

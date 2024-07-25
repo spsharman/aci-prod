@@ -10,6 +10,27 @@ apic:
       - name: subnet_10.237.97.176_28
         vlan_pool: subnet_10.237.97.176_28
 
+      - name: subnet_10.237.97.192_27
+        vlan_pool: subnet_10.237.97.192_27
+
+      - name: subnet_10.237.99.0_27
+        vlan_pool: subnet_10.237.99.0_27
+
+      - name: subnet_10.237.99.128_27
+        vlan_pool: subnet_10.237.99.128_27
+
+      - name: subnet_192.168.2.0_24
+        vlan_pool: subnet_192.168.2.0_24
+
+      - name: subnet_192.168.3.0_24
+        vlan_pool: subnet_192.168.3.0_24
+
+      - name: subnet_192.168.8.0_24
+        vlan_pool: subnet_192.168.8.0_24
+
+      - name: vpc_to_lab-gateway
+        vlan_pool: vpc_to_lab-gateway
+
       - name: vpc_to_r07-tor
         vlan_pool: vpc_to_r07-tor
 
@@ -18,6 +39,12 @@ apic:
 
       - name: vpc_to_r22-tor
         vlan_pool: vpc_to_r22-tor
+
+      - name: vpc_to_r33-tor
+        vlan_pool: vpc_to_r33-tor
+
+      - name: vpc_to_r35-tor
+        vlan_pool: vpc_to_r35-tor
 
       - name: vpc_to_r42-tor
         vlan_pool: vpc_to_r42-tor

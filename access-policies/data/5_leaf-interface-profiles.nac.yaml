@@ -44,6 +44,22 @@ apic:
                 from_port: 32
                 to_port: 32
 
+          - name: vpc_to_r33-tor
+            policy_group: vpc_to_r33-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 43
+                to_port: 43
+
+          - name: vpc_to_r35-tor
+            policy_group: vpc_to_r35-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 45
+                to_port: 45
+
           - name: vpc_to_r42-tor
             policy_group: vpc_to_r42-tor
             port_blocks:
@@ -91,6 +107,22 @@ apic:
                 from_port: 32
                 to_port: 32
 
+          - name: vpc_to_r33-tor
+            policy_group: vpc_to_r33-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 43
+                to_port: 43
+
+          - name: vpc_to_r35-tor
+            policy_group: vpc_to_r35-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 45
+                to_port: 45
+                
           - name: vpc_to_r42-tor
             policy_group: vpc_to_r42-tor
             port_blocks:
@@ -109,6 +141,14 @@ apic:
                 description: configured by NAC
                 from_port: 6
                 to_port: 6
+
+          - name: vpc_to_lab-gateway
+            policy_group: vpc_to_lab-gateway
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 17
+                to_port: 17
 
           - name: vpc_to_r23-hx-prod-fi-a
             policy_group: vpc_to_r23-hx-prod-fi-a
@@ -136,6 +176,14 @@ apic:
                 description: configured by NAC
                 from_port: 6
                 to_port: 6
+
+          - name: vpc_to_lab-gateway
+            policy_group: vpc_to_lab-gateway
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 17
+                to_port: 17
 
           - name: vpc_to_r23-hx-prod-fi-a
             policy_group: vpc_to_r23-hx-prod-fi-a

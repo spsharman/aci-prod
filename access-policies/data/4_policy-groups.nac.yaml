@@ -20,33 +20,6 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
 
-#       - name: shared-services.vrf-01-ospf-area-0.0.0.1
-#         type: access
-#         aaep: shared-services.vrf-01-ospf-area-0.0.0.1
-#         cdp_policy: cdp-enabled
-#         lldp_policy: lldp-disabled
-#         l2_policy: port-local-vlans
-
-#       - name: ucs-c220m5-vds-01
-#         type: access
-#         aaep: ucs-c220m5-vds-01
-#         lldp_policy: lldp-enabled
-#         l2_policy: port-local-vlans
-
-#       - name: ftd-ccl
-#         type: access
-#         aaep: firewalls
-#         lldp_policy: lldp-enabled
-#         cdp_policy: cdp-enabled
-#         l2_policy: port-local-vlans
-
-#       - name: ftd-data
-#         type: access
-#         aaep: firewalls
-#         lldp_policy: lldp-enabled
-#         cdp_policy: cdp-enabled
-#         l2_policy: port-local-vlans
-
 # # Port channel
 #       - name: hx-dev-01-fi-a
 #         type: pc
@@ -54,13 +27,14 @@ apic:
 #         lldp_policy: lldp-enabled
 #         l2_policy: port-local-vlans
 
-#       - name: hx-dev-01-fi-b
-#         type: pc
-#         aaep: hyperflex
-#         lldp_policy: lldp-enabled
-#         l2_policy: port-local-vlans
-
 # Virtual port channel
+      - name: vpc_to_lab-gateway
+        type: vpc
+        aaep: vpc_to_lab-gateway
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
       - name: vpc_to_r07-tor
         type: vpc
         aaep: vpc_to_r07-tor
@@ -78,6 +52,20 @@ apic:
       - name: vpc_to_r22-tor
         type: vpc
         aaep: vpc_to_r22-tor
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r33-tor
+        type: vpc
+        aaep: vpc_to_r33-tor
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r35-tor
+        type: vpc
+        aaep: vpc_to_r35-tor
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active

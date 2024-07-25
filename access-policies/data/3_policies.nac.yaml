@@ -62,9 +62,21 @@ apic:
         physical_domains:
           - hyperflex
 
+      - name: vpc_to_lab-gateway
+        physical_domains:
+          - vpc_to_lab-gateway
+
       - name: subnet_10.237.97.176_28
         physical_domains:
           - subnet_10.237.97.176_28
+
+      # - name: subnet_10.237.97.192_27
+      #   physical_domains:
+      #     - subnet_10.237.97.192_27
+
+      # - name: subnet_192.168.3.0_24
+      #   physical_domains:
+      #     - subnet_192.168.3.0_24
 
       - name: vpc_to_r07-tor
         physical_domains:
@@ -78,6 +90,26 @@ apic:
       - name: vpc_to_r22-tor
         physical_domains:
           - vpc_to_r22-tor
+
+      - name: vpc_to_r33-tor
+        physical_domains:
+          - vpc_to_r33-tor
+          - subnet_10.237.97.192_27
+          - subnet_10.237.99.0_27
+          - subnet_10.237.99.128_27
+          - subnet_192.168.2.0_24          
+          - subnet_192.168.3.0_24
+          - subnet_192.168.8.0_24
+
+      - name: vpc_to_r35-tor
+        physical_domains:
+          - vpc_to_r35-tor
+          - subnet_10.237.97.192_27
+          - subnet_10.237.99.0_27
+          - subnet_10.237.99.128_27
+          - subnet_192.168.2.0_24
+          - subnet_192.168.3.0_24
+          - subnet_192.168.8.0_24
 
       - name: vpc_to_r42-tor
         physical_domains:
