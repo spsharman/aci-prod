@@ -4,9 +4,34 @@ apic:
 
 # VLAN pools  
     vlan_pools:
-      - name: vpc_to_lab-gateway
+      - name: compute-oob-cimc-mgmt
         allocation: static
+        ranges:
+          - from: 998
 
+      - name: dmz
+        allocation: static
+        ranges:
+          - from: 3001
+            description: public ip range 64.103.44.48/28
+          - from: 3002
+            description: public ip range 64.103.44.64/27
+          - from: 3003
+            description: public ip range 64.103.44.96/28
+
+      - name: fabric-inband-mgmt
+        allocation: static
+        ranges:
+          - from: 5
+            description: fabric inband management
+
+      - name: lab-services
+        allocation: static
+        ranges:
+          - from: 988
+            description: lab desktops
+          - from: 991
+            description: core services
 
       - name: vpc_to_r07-tor
         allocation: static
@@ -21,6 +46,14 @@ apic:
         ranges:
           - from: 508
             to: 508
+            allocation: inherit
+            role: external
+
+      - name: vpc_to_r18-tor
+        allocation: static
+        ranges:
+          - from: 518
+            to: 518
             allocation: inherit
             role: external
 
@@ -88,6 +121,14 @@ apic:
             allocation: inherit
             role: external
 
+      - name: subnet_10.237.99.192_27
+        allocation: static
+        ranges:
+          - from: 977
+            to: 977
+            allocation: inherit
+            role: external
+
       - name: subnet_192.168.2.0_24
         allocation: static
         ranges:
@@ -112,55 +153,12 @@ apic:
             allocation: inherit
             role: external
 
-      - name: external-switches
+      - name: vmware
         allocation: static
         ranges:
-          - from: 501
-            to: 543
-            description: top of rack switch management
           - from: 986
-            description: hx-dev-01 vmotion
+            description: vmotion
           - from: 987
-            description: hx-dev-01 storage
+            description: storage
           - from: 992
-            description: hx-dev-01 esx management
-          - from: 999
-            description: external management
-
-      - name: dmz
-        allocation: static
-        ranges:
-          - from: 3001
-            description: public ip range 64.103.44.48/28
-            # vpc_to_r07-tor, vpc_to_r22-lab-gw, vpc_to_r23-hx-prod-fi-a, vpc_to_r23-hx-prod-fi-b
-          - from: 3002
-            description: public ip range 64.103.44.64/27
-            # vpc_to_r07-tor, vpc_to_r22-lab-gw, vpc_to_r23-hx-prod-fi-a, vpc_to_r23-hx-prod-fi-b
-          - from: 3003
-            description: public ip range 64.103.44.96/28
-            # vpc_to_r07-tor, vpc_to_r22-lab-gw, vpc_to_r23-hx-prod-fi-a, vpc_to_r23-hx-prod-fi-b
-
-      - name: fabric-inband-mgmt
-        allocation: static
-        ranges:
-          - from: 5
-            description: fabric inband management
-
-      - name: hyperflex
-        allocation: static
-        ranges:
-          - from: 5
-            description: fabric inband management
-          - from: 986
-            description: hx-dev-01 vmotion
-            # vpc_to_r23-hx-prod-fi-a, vpc_to_r23-hx-prod-fi-b
-          - from: 987
-            description: hx-dev-01 storage
-          - from: 988
-            description: 'lab desktops'
-            # vpc_to_r23-hx-prod-fi-a, vpc_to_r23-hx-prod-fi-b
-          - from: 991
-            description: core services
-          - from: 992
-            description: hx-dev-01 esx management
-            # vpc_to_r07-tor, vpc_to_r42-tor, vpc_to_r23-hx-prod-fi-a, vpc_to_r23-hx-prod-fi-b
+            description: esx management

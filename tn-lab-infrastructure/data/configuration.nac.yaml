@@ -130,9 +130,61 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
+            - name: '10.237.98.0_25'
+              bridge_domain: 10.237.98.0_25
+              alias: vlan-998
+              physical_domains:
+                - compute-oob-cimc-mgmt
+              static_ports:
+                - node_id: 101
+                  port: 7
+                  vlan: 998
+                  mode: native
+                  deployment_immediacy: immediate
+                - node_id: 102
+                  port: 7
+                  vlan: 998
+                  mode: native
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r07-tor"
+                  vlan: 998
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r22-lab-gw"
+                  vlan: 998
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-a"
+                  vlan: 998
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r23-hx-prod-fi-b"
+                  vlan: 998
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r33-tor"
+                  vlan: 998
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 998
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r42-tor"
+                  vlan: 998
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
             - name: '10.237.99.0_27'
               bridge_domain: 10.237.99.0_27
-              alias: vlan-994
+              alias: vlan-990
               physical_domains:
                 - subnet_10.237.99.0_27
               static_ports:
@@ -149,7 +201,7 @@ apic:
 
             - name: '10.237.99.128_27'
               bridge_domain: 10.237.99.128_27
-              alias: vlan-994
+              alias: vlan-979
               physical_domains:
                 - subnet_10.237.99.128_27
               static_ports:
@@ -160,6 +212,18 @@ apic:
                   deployment_immediacy: immediate
                 - channel: "vpc_to_r35-tor"
                   vlan: 979
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: '10.237.99.192_27'
+              bridge_domain: 10.237.99.192_27
+              alias: vlan-977
+              physical_domains:
+                - subnet_10.237.99.192_27
+              static_ports:
+                - channel: "vpc_to_r18-tor"
+                  vlan: 977
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
@@ -221,7 +285,7 @@ apic:
             - name: 'core-services'
               bridge_domain: 10.237.97.128_27
               physical_domains:
-                - hyperflex
+                - lab-services
               static_ports:
                 - channel: "vpc_to_r23-hx-prod-fi-a"
                   vlan: 991
@@ -237,7 +301,7 @@ apic:
             - name: 'lab-desktops'
               bridge_domain: 10.237.97.160_28
               physical_domains:
-                - hyperflex
+                - lab-services
               static_ports:
                 - channel: "vpc_to_r23-hx-prod-fi-a"
                   vlan: 988

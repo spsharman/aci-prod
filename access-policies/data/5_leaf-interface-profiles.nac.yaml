@@ -8,6 +8,14 @@ apic:
 # Leaf-101
       - name: aci-prod-leaf-101
         selectors:
+          - name: compute-oob-cimc-mgmt
+            policy_group: compute-oob-cimc-mgmt
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 7
+                to_port: 7
+
           - name: firewall-management
             policy_group: firewall-management
             port_blocks:
@@ -35,6 +43,14 @@ apic:
                 description: configured by NAC
                 from_port: 18
                 to_port: 18
+
+          - name: vpc_to_r18-tor
+            policy_group: vpc_to_r18-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 28
+                to_port: 28
 
           - name: vpc_to_r22-tor
             policy_group: vpc_to_r22-tor
@@ -71,6 +87,14 @@ apic:
 # Leaf-102                
       - name: aci-prod-leaf-102
         selectors:
+          - name: compute-oob-cimc-mgmt
+            policy_group: compute-oob-cimc-mgmt
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 7
+                to_port: 7
+
           - name: firewall-management
             policy_group: firewall-management
             port_blocks:
@@ -99,6 +123,14 @@ apic:
                 from_port: 18
                 to_port: 18
 
+          - name: vpc_to_r18-tor
+            policy_group: vpc_to_r18-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 28
+                to_port: 28
+
           - name: vpc_to_r22-tor
             policy_group: vpc_to_r22-tor
             port_blocks:
@@ -122,7 +154,7 @@ apic:
                 description: configured by NAC
                 from_port: 45
                 to_port: 45
-                
+
           - name: vpc_to_r42-tor
             policy_group: vpc_to_r42-tor
             port_blocks:
@@ -142,8 +174,8 @@ apic:
                 from_port: 6
                 to_port: 6
 
-          - name: vpc_to_lab-gateway
-            policy_group: vpc_to_lab-gateway
+          - name: vpc_to_r22-lab-gw
+            policy_group: vpc_to_r22-lab-gw
             port_blocks:
               - name: block-1
                 description: configured by NAC
@@ -177,8 +209,8 @@ apic:
                 from_port: 6
                 to_port: 6
 
-          - name: vpc_to_lab-gateway
-            policy_group: vpc_to_lab-gateway
+          - name: vpc_to_r22-lab-gw
+            policy_group: vpc_to_r22-lab-gw
             port_blocks:
               - name: block-1
                 description: configured by NAC

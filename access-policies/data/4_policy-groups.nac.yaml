@@ -6,6 +6,13 @@ apic:
     leaf_interface_policy_groups:
 
 # Access port
+      - name: compute-oob-cimc-mgmt
+        type: access
+        aaep: compute-oob-cimc-mgmt
+        lldp_policy: lldp-enabled
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+
       - name: core-routers
         type: access
         aaep: core-routers
@@ -28,13 +35,6 @@ apic:
 #         l2_policy: port-local-vlans
 
 # Virtual port channel
-      - name: vpc_to_lab-gateway
-        type: vpc
-        aaep: vpc_to_lab-gateway
-        cdp_policy: cdp-enabled
-        l2_policy: port-local-vlans
-        port_channel_policy: lacp-active
-
       - name: vpc_to_r07-tor
         type: vpc
         aaep: vpc_to_r07-tor
@@ -49,10 +49,40 @@ apic:
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
 
+      - name: vpc_to_r18-tor
+        type: vpc
+        aaep: vpc_to_r18-tor
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r22-lab-gw
+        type: vpc
+        aaep: vpc_to_r22-lab-gw
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
       - name: vpc_to_r22-tor
         type: vpc
         aaep: vpc_to_r22-tor
         cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r23-hx-prod-fi-a
+        type: vpc
+        aaep: hyperflex
+        cdp_policy: cdp-enabled
+        lldp_policy: lldp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r23-hx-prod-fi-b
+        type: vpc
+        aaep: hyperflex
+        cdp_policy: cdp-enabled
+        lldp_policy: lldp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
 
@@ -74,21 +104,5 @@ apic:
         type: vpc
         aaep: vpc_to_r42-tor
         cdp_policy: cdp-enabled
-        l2_policy: port-local-vlans
-        port_channel_policy: lacp-active
-
-      - name: vpc_to_r23-hx-prod-fi-a
-        type: vpc
-        aaep: hyperflex
-        cdp_policy: cdp-enabled
-        lldp_policy: lldp-enabled
-        l2_policy: port-local-vlans
-        port_channel_policy: lacp-active
-
-      - name: vpc_to_r23-hx-prod-fi-b
-        type: vpc
-        aaep: hyperflex
-        cdp_policy: cdp-enabled
-        lldp_policy: lldp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active

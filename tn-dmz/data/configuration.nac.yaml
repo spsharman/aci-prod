@@ -9,10 +9,11 @@ apic:
       description: Routable IP range
 
       application_profiles:      
-        - name: '64.103.44.48_28'
+        - name: public-subnets
           description: EPGs provide the VLAN backing for application workloads
           endpoint_groups:      
-            - name: 'vlan-3001'
+            - name: 64.103.44.48_28
+              alias: 'vlan-3001'
               bridge_domain: 64.103.44.48_28
               physical_domains:
                 - dmz
@@ -38,7 +39,8 @@ apic:
                   node2_id: 104
                   deployment_immediacy: immediate
 
-            - name: 'vlan-3002'
+            - name: 64.103.44.64_27
+              alias: 'vlan-3002'
               bridge_domain: 64.103.44.64_27
               physical_domains:
                 - dmz
@@ -64,7 +66,8 @@ apic:
                   node2_id: 104
                   deployment_immediacy: immediate
 
-            - name: 'vlan-3003'
+            - name: 64.103.44.96_28
+              alias: vlan-3003
               bridge_domain: 64.103.44.96_28
               physical_domains:
                 - dmz

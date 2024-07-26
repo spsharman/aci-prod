@@ -57,35 +57,43 @@ apic:
       - name: core-routers
         routed_domains:
           - common.vrf-01
-      
+
+      - name: compute-oob-cimc-mgmt
+        physical_domains:
+          - compute-oob-cimc-mgmt
+
       - name: hyperflex
         physical_domains:
-          - hyperflex
+          - compute-oob-cimc-mgmt
+          - dmz
+          - lab-services
+          - vmware
 
-      - name: vpc_to_lab-gateway
+      - name: vpc_to_r22-lab-gw
         physical_domains:
-          - vpc_to_lab-gateway
+          - compute-oob-cimc-mgmt
+          - dmz
 
       - name: subnet_10.237.97.176_28
         physical_domains:
           - subnet_10.237.97.176_28
 
-      # - name: subnet_10.237.97.192_27
-      #   physical_domains:
-      #     - subnet_10.237.97.192_27
-
-      # - name: subnet_192.168.3.0_24
-      #   physical_domains:
-      #     - subnet_192.168.3.0_24
-
       - name: vpc_to_r07-tor
         physical_domains:
           - vpc_to_r07-tor
+          - compute-oob-cimc-mgmt
+          - dmz
           - subnet_10.237.97.176_28
+          - vmware
 
       - name: vpc_to_r08-tor
         physical_domains:
           - vpc_to_r08-tor
+
+      - name: vpc_to_r18-tor
+        physical_domains:
+          - vpc_to_r18-tor
+          - subnet_10.237.99.192_27
 
       - name: vpc_to_r22-tor
         physical_domains:
@@ -94,91 +102,29 @@ apic:
       - name: vpc_to_r33-tor
         physical_domains:
           - vpc_to_r33-tor
+          - compute-oob-cimc-mgmt
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
           - subnet_10.237.99.128_27
           - subnet_192.168.2.0_24          
           - subnet_192.168.3.0_24
           - subnet_192.168.8.0_24
+          - vmware
 
       - name: vpc_to_r35-tor
         physical_domains:
           - vpc_to_r35-tor
+          - compute-oob-cimc-mgmt
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
           - subnet_10.237.99.128_27
           - subnet_192.168.2.0_24
           - subnet_192.168.3.0_24
           - subnet_192.168.8.0_24
+          - vmware
 
       - name: vpc_to_r42-tor
         physical_domains:
           - vpc_to_r42-tor
-
-#       - name: ucs-cimc
-#         infra_vlan: false
-#         physical_domains:
-#           - ucs-cimc
-
-#       - name: core-routers
-#         infra_vlan: false
-#         physical_domains:
-#           - core-routers
-
-#       - name: external-switches
-#         physical_domains:
-#           - external-switches
-
-#       - name: firewall-management
-#         physical_domains:
-#           - firewall-management
-
-#       - name: nimble-management
-#         physical_domains:
-#           - nimble-management
-
-#       - name: fabric-interconnects
-#         physical_domains:
-#           - fabric-interconnects
-
-#         routed_domains:
-#           - ajshahid.vrf-01
-#           - conmurph-01.vrf-01
-#           - conmurph-01.vrf-02
-#           - conmurph-02.vrf-01
-#           - conmurph-02.vrf-02
-#           - containers.vrf-01
-#           - demo-01.vrf-01
-#           - demo-02.vrf-01
-#           - demo-03.vrf-01
-#           - demo-05.vrf-01
-#           - demo.vrf-01
-#           - shared-services.vrf-01
-#           - shared-services.vrf-01-static-routes
-#           - shared-services.vrf-02
-#           - shared-services.vrf-03
-#         # vmware_vmm_domains:
-#           # - hx-dev-01-vds-01
-
-#       - name: multisite
-#         routed_domains:
-#           - multisite
-
-#       - name: shared-services.vrf-01-ospf-area-0.0.0.1
-#         routed_domains:
-#           - shared-services.vrf-01
-
-#       - name: ucs-c220m5-vds-01
-#         routed_domains:
-#           - conmurph.vrf-01
-#         # vmware_vmm_domains:
-#           # - ucsc-c220m5-vds-01
-
-#       - name: vpc_to_r07-tor
-#         routed_domains:
-#           - mgmt_inb
-
-#         physical_domains:
-#           - dmz
-#           - external-switches
-#           - hyperflex
+          - compute-oob-cimc-mgmt
+          - vmware

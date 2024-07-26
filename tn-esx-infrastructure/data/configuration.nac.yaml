@@ -15,17 +15,12 @@ apic:
             - name: 'host-mgmt'
               bridge_domain: 10.237.98.128_25
               physical_domains:
-                - hyperflex
+                - vmware
               static_ports:
                 - channel: "vpc_to_r07-tor"
                   vlan: 992
                   node_id: 101
                   node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r42-tor"
-                  vlan: 992
-                  node_id: 103
-                  node2_id: 104
                   deployment_immediacy: immediate
                 - channel: "vpc_to_r23-hx-prod-fi-a"
                   vlan: 992
@@ -37,11 +32,26 @@ apic:
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
+                - channel: "vpc_to_r33-tor"
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r35-tor"
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_r42-tor"
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
 
             - name: 'vmotion'
-              bridge_domain: 192.168.1.x
+              bridge_domain: 192.168.1.128_25
               physical_domains:
-                - hyperflex
+                - vmware
               static_ports:
                 - channel: "vpc_to_r23-hx-prod-fi-a"
                   vlan: 986
@@ -55,9 +65,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: 'hx-storage'
-              bridge_domain: 192.168.1.x
+              bridge_domain: 192.168.1.0_25
               physical_domains:
-                - hyperflex
+                - vmware
               static_ports:
                 - channel: "vpc_to_r23-hx-prod-fi-a"
                   vlan: 987
