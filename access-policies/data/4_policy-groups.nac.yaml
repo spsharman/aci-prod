@@ -35,6 +35,20 @@ apic:
 #         l2_policy: port-local-vlans
 
 # Virtual port channel
+      - name: vpc_to_r03-tor-01
+        type: vpc
+        aaep: vpc_to_r03-tor
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r03-tor-02
+        type: vpc
+        aaep: vpc_to_r03-tor
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
       - name: vpc_to_r07-tor
         type: vpc
         aaep: vpc_to_r07-tor
@@ -83,6 +97,20 @@ apic:
         aaep: hyperflex
         cdp_policy: cdp-enabled
         lldp_policy: lldp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r26-tor
+        type: vpc
+        aaep: vpc_to_r26-tor
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+        port_channel_policy: lacp-active
+
+      - name: vpc_to_r28-tor
+        type: vpc
+        aaep: vpc_to_r28-tor
+        cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
 

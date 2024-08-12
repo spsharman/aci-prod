@@ -16,6 +16,36 @@ apic:
       - name: vmware
         vlan_pool: vmware
 
+      - name: subnet_10.237.96.64_29
+        vlan_pool: subnet_10.237.96.64_29
+
+      - name: subnet_10.237.96.72_29
+        vlan_pool: subnet_10.237.96.72_29
+
+      - name: subnet_10.237.96.88_29
+        vlan_pool: subnet_10.237.96.88_29
+
+      - name: subnet_10.237.96.152_29
+        vlan_pool: subnet_10.237.96.152_29
+
+      - name: subnet_10.237.96.184_29
+        vlan_pool: subnet_10.237.96.184_29
+
+      - name: subnet_10.237.96.240_29
+        vlan_pool: subnet_10.237.96.240_29
+
+      - name: subnet_10.237.97.0_29
+        vlan_pool: subnet_10.237.97.0_29
+
+      - name: subnet_10.237.97.40_29
+        vlan_pool: subnet_10.237.97.40_29
+
+      - name: subnet_10.237.97.56_29
+        vlan_pool: subnet_10.237.97.56_29
+
+      - name: subnet_10.237.97.112_29
+        vlan_pool: subnet_10.237.97.112_29
+
       - name: subnet_10.237.97.176_28
         vlan_pool: subnet_10.237.97.176_28
 
@@ -24,6 +54,9 @@ apic:
 
       - name: subnet_10.237.99.0_27
         vlan_pool: subnet_10.237.99.0_27
+
+      - name: subnet_10.237.99.32_28
+        vlan_pool: subnet_10.237.99.32_28
 
       - name: subnet_10.237.99.128_27
         vlan_pool: subnet_10.237.99.128_27
@@ -39,27 +72,6 @@ apic:
 
       - name: subnet_192.168.8.0_24
         vlan_pool: subnet_192.168.8.0_24
-
-      - name: vpc_to_r07-tor
-        vlan_pool: vpc_to_r07-tor
-
-      - name: vpc_to_r08-tor
-        vlan_pool: vpc_to_r08-tor
-
-      - name: vpc_to_r18-tor
-        vlan_pool: vpc_to_r18-tor
-
-      - name: vpc_to_r22-tor
-        vlan_pool: vpc_to_r22-tor
-
-      - name: vpc_to_r33-tor
-        vlan_pool: vpc_to_r33-tor
-
-      - name: vpc_to_r35-tor
-        vlan_pool: vpc_to_r35-tor
-
-      - name: vpc_to_r42-tor
-        vlan_pool: vpc_to_r42-tor
 
 # L3 Domains
     routed_domains:

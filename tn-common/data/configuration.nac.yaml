@@ -574,6 +574,19 @@ apic:
           l3outs:
             - common.vrf-01-ospf-area-0.0.0.0
 
+        - name: 10.237.97.0_29
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.97.1/29
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
         - name: 10.237.97.40_29
           description: Configured with NAC
           unknown_unicast: proxy
@@ -723,6 +736,19 @@ apic:
           vrf: common.vrf-01
           subnets:
             - ip: 10.237.99.1/27
+              public: true
+              private: false
+              shared: false
+              nd_ra_prefix: false
+          l3outs:
+            - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.99.32_28
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-01
+          subnets:
+            - ip: 10.237.99.33/28
               public: true
               private: false
               shared: false

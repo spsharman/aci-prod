@@ -28,6 +28,22 @@ apic:
                 from_port: 6
                 to_port: 6
 
+          - name: vpc_to_r03-tor-01
+            policy_group: vpc_to_r03-tor-01
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 13
+                to_port: 13
+
+          - name: vpc_to_r03-tor-02
+            policy_group: vpc_to_r03-tor-02
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 3
+                to_port: 3
+
           - name: vpc_to_r07-tor
             policy_group: vpc_to_r07-tor
             port_blocks:
@@ -59,6 +75,22 @@ apic:
                 description: configured by NAC
                 from_port: 32
                 to_port: 32
+
+          - name: vpc_to_r26-tor
+            policy_group: vpc_to_r26-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 36
+                to_port: 36
+
+          - name: vpc_to_r28-tor
+            policy_group: vpc_to_r28-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 38
+                to_port: 38
 
           - name: vpc_to_r33-tor
             policy_group: vpc_to_r33-tor
@@ -107,6 +139,22 @@ apic:
                 from_port: 6
                 to_port: 6
 
+          - name: vpc_to_r03-tor-01
+            policy_group: vpc_to_r03-tor-01
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 13
+                to_port: 13
+
+          - name: vpc_to_r03-tor-02
+            policy_group: vpc_to_r03-tor-02
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 3
+                to_port: 3
+
           - name: vpc_to_r07-tor
             policy_group: vpc_to_r07-tor
             port_blocks:
@@ -138,6 +186,22 @@ apic:
                 description: configured by NAC
                 from_port: 32
                 to_port: 32
+
+          - name: vpc_to_r26-tor
+            policy_group: vpc_to_r26-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 36
+                to_port: 36
+
+          - name: vpc_to_r28-tor
+            policy_group: vpc_to_r28-tor
+            port_blocks:
+              - name: block-1
+                description: configured by NAC
+                from_port: 38
+                to_port: 38
 
           - name: vpc_to_r33-tor
             policy_group: vpc_to_r33-tor

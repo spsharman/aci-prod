@@ -65,6 +65,7 @@ apic:
       - name: hyperflex
         physical_domains:
           - compute-oob-cimc-mgmt
+          - subnet_10.237.99.32_28
           - dmz
           - lab-services
           - vmware
@@ -78,9 +79,14 @@ apic:
         physical_domains:
           - subnet_10.237.97.176_28
 
+      - name: vpc_to_r03-tor
+        physical_domains:
+          - subnet_10.237.96.88_29
+          - compute-oob-cimc-mgmt
+
       - name: vpc_to_r07-tor
         physical_domains:
-          - vpc_to_r07-tor
+          - subnet_10.237.96.64_29
           - compute-oob-cimc-mgmt
           - dmz
           - subnet_10.237.97.176_28
@@ -88,20 +94,30 @@ apic:
 
       - name: vpc_to_r08-tor
         physical_domains:
-          - vpc_to_r08-tor
+          - subnet_10.237.96.72_29
 
       - name: vpc_to_r18-tor
         physical_domains:
-          - vpc_to_r18-tor
+          - subnet_10.237.96.152_29
           - subnet_10.237.99.192_27
 
       - name: vpc_to_r22-tor
         physical_domains:
-          - vpc_to_r22-tor
+          - subnet_10.237.96.88_29
+          - subnet_10.237.96.184_29
+
+      - name: vpc_to_r26-tor
+        physical_domains:
+          - subnet_10.237.96.240_29
+          - compute-oob-cimc-mgmt
+
+      - name: vpc_to_r28-tor
+        physical_domains:
+          - subnet_10.237.97.0_29
 
       - name: vpc_to_r33-tor
         physical_domains:
-          - vpc_to_r33-tor
+          - subnet_10.237.97.40_29
           - compute-oob-cimc-mgmt
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
@@ -113,7 +129,7 @@ apic:
 
       - name: vpc_to_r35-tor
         physical_domains:
-          - vpc_to_r35-tor
+          - subnet_10.237.97.56_29
           - compute-oob-cimc-mgmt
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
@@ -125,6 +141,6 @@ apic:
 
       - name: vpc_to_r42-tor
         physical_domains:
-          - vpc_to_r42-tor
+          - subnet_10.237.97.112_29
           - compute-oob-cimc-mgmt
           - vmware

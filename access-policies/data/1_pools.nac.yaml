@@ -33,7 +33,7 @@ apic:
           - from: 991
             description: core services
 
-      - name: vpc_to_r07-tor
+      - name: subnet_10.237.96.64_29
         allocation: static
         ranges:
           - from: 507
@@ -41,7 +41,7 @@ apic:
             allocation: inherit
             role: external
 
-      - name: vpc_to_r08-tor
+      - name: subnet_10.237.96.72_29
         allocation: static
         ranges:
           - from: 508
@@ -49,7 +49,15 @@ apic:
             allocation: inherit
             role: external
 
-      - name: vpc_to_r18-tor
+      - name: subnet_10.237.96.88_29
+        allocation: static
+        ranges:
+          - from: 503
+            to: 503
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.96.152_29
         allocation: static
         ranges:
           - from: 518
@@ -57,7 +65,7 @@ apic:
             allocation: inherit
             role: external
 
-      - name: vpc_to_r22-tor
+      - name: subnet_10.237.96.184_29
         allocation: static
         ranges:
           - from: 522
@@ -65,7 +73,23 @@ apic:
             allocation: inherit
             role: external
 
-      - name: vpc_to_r33-tor
+      - name: subnet_10.237.96.240_29
+        allocation: static
+        ranges:
+          - from: 526
+            to: 526
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.97.0_29
+        allocation: static
+        ranges:
+          - from: 528
+            to: 528
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.97.40_29
         allocation: static
         ranges:
           - from: 533
@@ -73,7 +97,7 @@ apic:
             allocation: inherit
             role: external
 
-      - name: vpc_to_r35-tor
+      - name: subnet_10.237.97.56_29
         allocation: static
         ranges:
           - from: 535
@@ -81,7 +105,7 @@ apic:
             allocation: inherit
             role: external
 
-      - name: vpc_to_r42-tor
+      - name: subnet_10.237.97.112_29
         allocation: static
         ranges:
           - from: 542
@@ -110,6 +134,14 @@ apic:
         ranges:
           - from: 990
             to: 990
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.99.32_28
+        allocation: static
+        ranges:
+          - from: 989
+            to: 989
             allocation: inherit
             role: external
 
