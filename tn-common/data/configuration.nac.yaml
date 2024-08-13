@@ -255,26 +255,6 @@ apic:
 # L3outs
       l3outs:
         - name: common.vrf-01-ospf-area-0.0.0.0
-          # nodes:
-          #   - node_id: 101
-          #     router_id: 5.5.5.5
-          #     router_id_as_loopback: true
-          #     static_routes:
-          #       - prefix: 2.2.2.0/24
-          #         description: My Desc
-          #         preference: 1
-          #         next_hops:
-          #           - ip: 6.6.6.6
-          #     interfaces:
-          #       - channel: VPC1
-          #         svi: true
-          #         scope: local
-          #         vlan: 301
-          #         ip_a: 14.14.14.1/24
-          #         ip_b: 14.14.14.2/24
-          #         ip_shared: 14.14.14.3/24
-          #         mode: native 
-
           description: configured with NAC
           vrf: common.vrf-01
           domain: common.vrf-01
@@ -308,16 +288,6 @@ apic:
                       mtu: inherit
                   ospf:
                     policy: OSPF_p2p
-
-#                 - name: vpc_to_r07-tor
-                  # interfaces:
-                  #   - channel: VPC1
-                      # svi: true
-                      # scope: local
-                      # vlan: 301
-                      # ip_a: 14.14.14.1/24
-                      # ip_b: 14.14.14.2/24
-                      # ip_shared: 14.14.14.3/24
 
 # extEPG all external subnets
           external_endpoint_groups:
@@ -820,32 +790,6 @@ apic:
               nd_ra_prefix: false
           l3outs:
             - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.99.248_30
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          # subnets:
-          #   - ip: 10.237.99.248/30
-          #     public: true
-          #     private: false
-          #     shared: false
-          #     nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.99.252_30
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          # subnets:
-          #   - ip: 10.237.99.248/30
-          #     public: true
-          #     private: false
-          #     shared: false
-          #     nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.101.0_27
           description: Configured with NAC
