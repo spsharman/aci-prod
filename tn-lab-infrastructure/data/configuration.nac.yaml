@@ -119,7 +119,7 @@ apic:
                   deployment_immediacy: immediate
 
             - name: subnet_10.237.97.56
-              bridge_domain: 10.237.97.40_29
+              bridge_domain: 10.237.97.56_29
               alias: rack-35_management
               physical_domains:
                 - subnet_10.237.97.56_29
