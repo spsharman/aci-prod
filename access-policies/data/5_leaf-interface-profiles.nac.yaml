@@ -12,7 +12,7 @@ apic:
             policy_group: compute-oob-cimc-mgmt
             port_blocks:
               - name: block-1
-                description: configured by NAC
+                description: hx-prod-fi-a
                 from_port: 7
                 to_port: 7
 
@@ -20,101 +20,67 @@ apic:
             policy_group: firewall-management
             port_blocks:
               - name: block-1
-                description: configured by NAC
+                description: ftd-4112-01
                 from_port: 5
                 to_port: 5
               - name: block-2
-                description: configured by NAC
+                description: ftd-4112-02
                 from_port: 6
                 to_port: 6
 
-          - name: vpc_to_r03-tor-01
-            policy_group: vpc_to_r03-tor-01
+          - name: vpc_to_rack-L09-tor
+            description: Rack L09 Hyperfex
+            policy_group: vpc_to_rack-L09-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 13
-                to_port: 13
+                description: Rack L09 Hyperfex
+                from_port: 9
+                to_port: 9
 
-          - name: vpc_to_r03-tor-02
-            policy_group: vpc_to_r03-tor-02
+          - name: vpc_to_rack-L10-tor
+            description: Rack L10 VXLAN
+            policy_group: vpc_to_rack-L10-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 3
-                to_port: 3
+                description: Rack L10 VXLAN
+                from_port: 10
+                to_port: 10
 
-          - name: vpc_to_r07-tor
-            policy_group: vpc_to_r07-tor
+          - name: vpc_to_rack-L11-tor
+            description: Rack L11 ACI
+            policy_group: vpc_to_rack-L11-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 17
-                to_port: 17
+                description: Rack L11 ACI
+                from_port: 11
+                to_port: 11
 
-          - name: vpc_to_r08-tor
-            policy_group: vpc_to_r08-tor
+          - name: vpc_to_rack-L14-tor
+            description: Rack L14 ACI
+            policy_group: vpc_to_rack-L14-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 18
-                to_port: 18
+                description: Rack L14 ACI
+                from_port: 14
+                to_port: 14
 
-          - name: vpc_to_r18-tor
-            policy_group: vpc_to_r18-tor
+          - name: vpc_to_rack-L15-tor
+            description: Rack L15 VXLAN
+            policy_group: vpc_to_rack-L15-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 28
-                to_port: 28
+                description: Rack L15 VXLAN
+                from_port: 15
+                to_port: 15
 
-          - name: vpc_to_r22-tor
-            policy_group: vpc_to_r22-tor
+          - name: vpc_to_rack-L16-tor
+            description: Rack L16 Hyperflex
+            policy_group: vpc_to_rack-L16-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 32
-                to_port: 32
-
-          - name: vpc_to_r26-tor
-            policy_group: vpc_to_r26-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 36
-                to_port: 36
-
-          - name: vpc_to_r28-tor
-            policy_group: vpc_to_r28-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 38
-                to_port: 38
-
-          - name: vpc_to_r33-tor
-            policy_group: vpc_to_r33-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 43
-                to_port: 43
-
-          - name: vpc_to_r35-tor
-            policy_group: vpc_to_r35-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 45
-                to_port: 45
-
-          - name: vpc_to_r42-tor
-            policy_group: vpc_to_r42-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 52
-                to_port: 52
+                description: Rack L16 Hyperflex
+                from_port: 16
+                to_port: 16
 
 # Leaf-102                
       - name: aci-prod-leaf-102
@@ -123,7 +89,7 @@ apic:
             policy_group: compute-oob-cimc-mgmt
             port_blocks:
               - name: block-1
-                description: configured by NAC
+                description: hx-prod-fi-b
                 from_port: 7
                 to_port: 7
 
@@ -131,101 +97,67 @@ apic:
             policy_group: firewall-management
             port_blocks:
               - name: block-1
-                description: configured by NAC
+                description: ftd-4112-01
                 from_port: 5
                 to_port: 5
               - name: block-2
-                description: configured by NAC
+                description: ftd-4112-02
                 from_port: 6
                 to_port: 6
 
-          - name: vpc_to_r03-tor-01
-            policy_group: vpc_to_r03-tor-01
+          - name: vpc_to_rack-L09-tor
+            description: Rack L09 Hyperfex
+            policy_group: vpc_to_rack-L09-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 13
-                to_port: 13
+                description: Rack L09 Hyperfex
+                from_port: 9
+                to_port: 9
 
-          - name: vpc_to_r03-tor-02
-            policy_group: vpc_to_r03-tor-02
+          - name: vpc_to_rack-L10-tor
+            description: Rack L10 VXLAN
+            policy_group: vpc_to_rack-L10-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 3
-                to_port: 3
+                description: Rack L10 VXLAN
+                from_port: 10
+                to_port: 10
 
-          - name: vpc_to_r07-tor
-            policy_group: vpc_to_r07-tor
+          - name: vpc_to_rack-L11-tor
+            description: Rack L11 ACI
+            policy_group: vpc_to_rack-L11-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 17
-                to_port: 17
+                description: Rack L11 ACI
+                from_port: 11
+                to_port: 11
 
-          - name: vpc_to_r08-tor
-            policy_group: vpc_to_r08-tor
+          - name: vpc_to_rack-L14-tor
+            description: Rack L14 ACI
+            policy_group: vpc_to_rack-L14-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 18
-                to_port: 18
+                description: Rack L14 ACI
+                from_port: 14
+                to_port: 14
 
-          - name: vpc_to_r18-tor
-            policy_group: vpc_to_r18-tor
+          - name: vpc_to_rack-L15-tor
+            description: Rack L15 VXLAN
+            policy_group: vpc_to_rack-L15-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 28
-                to_port: 28
+                description: Rack L15 VXLAN
+                from_port: 15
+                to_port: 15
 
-          - name: vpc_to_r22-tor
-            policy_group: vpc_to_r22-tor
+          - name: vpc_to_rack-L16-tor
+            description: Rack L16 Hyperflex
+            policy_group: vpc_to_rack-L16-tor
             port_blocks:
               - name: block-1
-                description: configured by NAC
-                from_port: 32
-                to_port: 32
-
-          - name: vpc_to_r26-tor
-            policy_group: vpc_to_r26-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 36
-                to_port: 36
-
-          - name: vpc_to_r28-tor
-            policy_group: vpc_to_r28-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 38
-                to_port: 38
-
-          - name: vpc_to_r33-tor
-            policy_group: vpc_to_r33-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 43
-                to_port: 43
-
-          - name: vpc_to_r35-tor
-            policy_group: vpc_to_r35-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 45
-                to_port: 45
-
-          - name: vpc_to_r42-tor
-            policy_group: vpc_to_r42-tor
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 52
-                to_port: 52
+                description: Rack L16 Hyperflex
+                from_port: 16
+                to_port: 16
 
 # Leaf-103
       - name: aci-prod-leaf-103

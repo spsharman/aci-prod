@@ -22,8 +22,17 @@ apic:
       - name: subnet_10.237.96.72_29
         vlan_pool: subnet_10.237.96.72_29
 
+      - name: subnet_10.237.96.80_29
+        vlan_pool: subnet_10.237.96.80_29
+
       - name: subnet_10.237.96.88_29
         vlan_pool: subnet_10.237.96.88_29
+
+      - name: subnet_10.237.96.96_29
+        vlan_pool: subnet_10.237.96.96_29
+
+      - name: subnet_10.237.96.104_29
+        vlan_pool: subnet_10.237.96.104_29
 
       - name: subnet_10.237.96.152_29
         vlan_pool: subnet_10.237.96.152_29

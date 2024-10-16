@@ -12,132 +12,74 @@ apic:
         - name: 'top-of-rack-management-subnets'
           description: EPGs provide the VLAN backing for application workloads
           endpoint_groups:      
-            - name: subnet_10.237.96.88
-              alias: rack-03_management
+            - name: subnet_10.237.96.64_29
+              alias: rack-l09-tor-hyperflex
+              bridge_domain: 10.237.96.64_29
+              physical_domains:
+                - subnet_10.237.96.64_29
+              static_ports:
+                - channel: "vpc_to_rack-L09-tor"
+                  vlan: 509
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: subnet_10.237.96.72_29
+              alias: rack-l10-tor-vxlan
+              bridge_domain: 10.237.96.72_29
+              physical_domains:
+                - subnet_10.237.96.72_29
+              static_ports:
+                - channel: "vpc_to_rack-L10-tor"
+                  vlan: 510
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: subnet_10.237.96.80_29
+              alias: rack-l11-tor-aci
+              bridge_domain: 10.237.96.80_29
+              physical_domains:
+                - subnet_10.237.96.80_29
+              static_ports:
+                - channel: "vpc_to_rack-L11-tor"
+                  vlan: 511
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: subnet_10.237.96.88_29
+              alias: rack-l14-tor-aci
               bridge_domain: 10.237.96.88_29
               physical_domains:
                 - subnet_10.237.96.88_29
               static_ports:
-                - channel: "vpc_to_r03-tor-01"
-                  vlan: 503
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r03-tor-02"
-                  vlan: 503
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r22-tor"
-                  vlan: 503
+                - channel: "vpc_to_rack-L14-tor"
+                  vlan: 514
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.64
-              bridge_domain: 10.237.96.64_29
-              alias: rack-07_management
+            - name: subnet_10.237.96.96_29
+              alias: rack-l15-tor-vxlan
+              bridge_domain: 10.237.96.96_29
               physical_domains:
-                - subnet_10.237.96.64_29
+                - subnet_10.237.96.96_29
               static_ports:
-                - channel: "vpc_to_r07-tor"
-                  vlan: 507
+                - channel: "vpc_to_rack-L15-tor"
+                  vlan: 515
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.72
-              bridge_domain: 10.237.96.72_29
-              alias: rack-08_management
+            - name: subnet_10.237.96.104_29
+              alias: rack-l16-tor-hyperflex
+              bridge_domain: 10.237.96.104_29
               physical_domains:
-                - subnet_10.237.96.72_29
+                - subnet_10.237.96.104_29
               static_ports:
-                - channel: "vpc_to_r08-tor"
-                  vlan: 508
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.96.152
-              bridge_domain: 10.237.96.152_29
-              alias: rack-18_management
-              physical_domains:
-                - subnet_10.237.96.152_29
-              static_ports:          
-                - channel: "vpc_to_r18-tor"
-                  vlan: 518
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.96.184 
-              bridge_domain: 10.237.96.184_29
-              alias: rack-22_management
-              physical_domains:
-                - subnet_10.237.96.184_29
-              static_ports:          
-                - channel: "vpc_to_r22-tor"
-                  vlan: 522
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.96.240
-              bridge_domain: 10.237.96.240_29
-              alias: rack-26_management
-              physical_domains:
-                - subnet_10.237.96.240_29
-              static_ports:          
-                - channel: "vpc_to_r26-tor"
-                  vlan: 526
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.97.0
-              bridge_domain: 10.237.97.0_29
-              alias: rack-28_management
-              physical_domains:
-                - subnet_10.237.97.0_29
-              static_ports:
-                - channel: "vpc_to_r28-tor"
-                  vlan: 528
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.97.40
-              bridge_domain: 10.237.97.40_29
-              alias: rack-33_management
-              physical_domains:
-                - subnet_10.237.97.40_29
-              static_ports:
-                - channel: "vpc_to_r33-tor"
-                  vlan: 533
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.97.56
-              bridge_domain: 10.237.97.56_29
-              alias: rack-35_management
-              physical_domains:
-                - subnet_10.237.97.56_29
-              static_ports:
-                - channel: "vpc_to_r35-tor"
-                  vlan: 535
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: subnet_10.237.97.112_29
-              bridge_domain: 10.237.97.112_29
-              alias: rack-42_management
-              physical_domains:
-                - subnet_10.237.97.112_29
-              static_ports:
-                - channel: "vpc_to_r42-tor"
-                  vlan: 542
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 516
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
@@ -151,7 +93,7 @@ apic:
               physical_domains:
                 - subnet_10.237.97.176_28
               static_ports:
-                - channel: "vpc_to_r07-tor"
+                - channel: "vpc_to_rack-L11-tor"
                   vlan: 997
                   node_id: 101
                   node2_id: 102
@@ -210,25 +152,35 @@ apic:
                   vlan: 998
                   mode: native
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r03-tor-01"
+                - channel: "vpc_to_rack-L09-tor"
                   vlan: 998
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r03-tor-02"
+                - channel: "vpc_to_rack-L10-tor"
                   vlan: 998
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r07-tor"
+                - channel: "vpc_to_rack-L11-tor"
                   vlan: 998
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r22-lab-gw"
+                - channel: "vpc_to_rack-L14-tor"
                   vlan: 998
-                  node_id: 103
-                  node2_id: 104
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L15-tor"
+                  vlan: 998
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate                  
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 998
+                  node_id: 101
+                  node2_id: 102
                   deployment_immediacy: immediate
                 - channel: "vpc_to_r23-hx-prod-fi-a"
                   vlan: 998
@@ -239,21 +191,6 @@ apic:
                   vlan: 998
                   node_id: 103
                   node2_id: 104
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r26-tor"
-                  vlan: 998
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r35-tor"
-                  vlan: 998
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r42-tor"
-                  vlan: 998
-                  node_id: 101
-                  node2_id: 102
                   deployment_immediacy: immediate
 
             - name: '10.237.99.0_27'
@@ -289,7 +226,6 @@ apic:
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
-
 
             - name: '10.237.99.128_27'
               bridge_domain: 10.237.99.128_27

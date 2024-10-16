@@ -36,24 +36,48 @@ apic:
       - name: subnet_10.237.96.64_29
         allocation: static
         ranges:
-          - from: 507
-            to: 507
+          - from: 509
+            to: 509
             allocation: inherit
             role: external
 
       - name: subnet_10.237.96.72_29
         allocation: static
         ranges:
-          - from: 508
-            to: 508
+          - from: 510
+            to: 510
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.96.80_29
+        allocation: static
+        ranges:
+          - from: 511
+            to: 511
             allocation: inherit
             role: external
 
       - name: subnet_10.237.96.88_29
         allocation: static
         ranges:
-          - from: 503
-            to: 503
+          - from: 514
+            to: 514
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.96.96_29
+        allocation: static
+        ranges:
+          - from: 515
+            to: 515
+            allocation: inherit
+            role: external
+
+      - name: subnet_10.237.96.104_29
+        allocation: static
+        ranges:
+          - from: 516
+            to: 516
             allocation: inherit
             role: external
 

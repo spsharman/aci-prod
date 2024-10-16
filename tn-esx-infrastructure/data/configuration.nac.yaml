@@ -17,7 +17,32 @@ apic:
               physical_domains:
                 - vmware
               static_ports:
-                - channel: "vpc_to_r07-tor"
+                - channel: vpc_to_rack-L09-tor
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: vpc_to_rack-L10-tor
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: vpc_to_rack-L11-tor
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: vpc_to_rack-L14-tor
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: vpc_to_rack-L15-tor
+                  vlan: 992
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: vpc_to_rack-L16-tor
                   vlan: 992
                   node_id: 101
                   node2_id: 102
@@ -31,21 +56,6 @@ apic:
                   vlan: 992
                   node_id: 103
                   node2_id: 104
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r33-tor"
-                  vlan: 992
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r35-tor"
-                  vlan: 992
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-                - channel: "vpc_to_r42-tor"
-                  vlan: 992
-                  node_id: 101
-                  node2_id: 102
                   deployment_immediacy: immediate
 
             - name: 'vmotion'
