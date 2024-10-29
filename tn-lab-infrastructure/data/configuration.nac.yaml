@@ -137,6 +137,7 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.98.0_25'
+              description: Shared CIMC management
               bridge_domain: 10.237.98.0_25
               alias: vlan-998
               physical_domains:
@@ -211,6 +212,7 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.99.32_28'
+              description: Nexus Dashboard
               bridge_domain: 10.237.99.32_28
               alias: vlan-989
               physical_domains:

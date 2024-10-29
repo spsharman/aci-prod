@@ -728,7 +728,7 @@ apic:
           unknown_unicast: proxy
           vrf: common.vrf-02
           subnets:
-            - ip: 10.237.103.33/27
+            - ip: 10.237.102.33/27
               public: true              
               shared: true
               nd_ra_prefix: false
