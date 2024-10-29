@@ -47,12 +47,12 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r23-hx-prod-fi-a"
+                - channel: "vpc_to_hx-prod-fi-a"
                   vlan: 992
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r23-hx-prod-fi-b"
+                - channel: "vpc_to_hx-prod-fi-b"
                   vlan: 992
                   node_id: 103
                   node2_id: 104
@@ -63,12 +63,12 @@ apic:
               physical_domains:
                 - vmware
               static_ports:
-                - channel: "vpc_to_r23-hx-prod-fi-a"
+                - channel: "vpc_to_hx-prod-fi-a"
                   vlan: 986
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r23-hx-prod-fi-b"
+                - channel: "vpc_to_hx-prod-fi-b"
                   vlan: 986
                   node_id: 103
                   node2_id: 104
@@ -79,12 +79,12 @@ apic:
               physical_domains:
                 - vmware
               static_ports:
-                - channel: "vpc_to_r23-hx-prod-fi-a"
+                - channel: "vpc_to_hx-prod-fi-a"
                   vlan: 987
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
-                - channel: "vpc_to_r23-hx-prod-fi-b"
+                - channel: "vpc_to_hx-prod-fi-b"
                   vlan: 987
                   node_id: 103
                   node2_id: 104

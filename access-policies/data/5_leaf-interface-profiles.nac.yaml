@@ -8,25 +8,13 @@ apic:
 # Leaf-101
       - name: aci-prod-leaf-101
         selectors:
-          - name: compute-oob-cimc-mgmt
-            policy_group: compute-oob-cimc-mgmt
+          - name: cimc-mgmt
+            policy_group: cimc-mgmt
             port_blocks:
               - name: block-1
                 description: hx-prod-fi-a
                 from_port: 7
                 to_port: 7
-
-          - name: firewall-management
-            policy_group: firewall-management
-            port_blocks:
-              - name: block-1
-                description: ftd-4112-01
-                from_port: 5
-                to_port: 5
-              - name: block-2
-                description: ftd-4112-02
-                from_port: 6
-                to_port: 6
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
@@ -85,25 +73,13 @@ apic:
 # Leaf-102                
       - name: aci-prod-leaf-102
         selectors:
-          - name: compute-oob-cimc-mgmt
-            policy_group: compute-oob-cimc-mgmt
+          - name: cimc-mgmt
+            policy_group: cimc-mgmt
             port_blocks:
               - name: block-1
                 description: hx-prod-fi-b
                 from_port: 7
                 to_port: 7
-
-          - name: firewall-management
-            policy_group: firewall-management
-            port_blocks:
-              - name: block-1
-                description: ftd-4112-01
-                from_port: 5
-                to_port: 5
-              - name: block-2
-                description: ftd-4112-02
-                from_port: 6
-                to_port: 6
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
@@ -170,24 +146,16 @@ apic:
                 from_port: 6
                 to_port: 6
 
-          - name: vpc_to_r22-lab-gw
-            policy_group: vpc_to_r22-lab-gw
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 17
-                to_port: 17
-
-          - name: vpc_to_r23-hx-prod-fi-a
-            policy_group: vpc_to_r23-hx-prod-fi-a
+          - name: vpc_to_hx-prod-fi-a
+            policy_group: vpc_to_hx-prod-fi-a
             port_blocks:
               - name: block-1
                 description: configured by NAC
                 from_port: 1
                 to_port: 1
 
-          - name: vpc_to_r23-hx-prod-fi-b
-            policy_group: vpc_to_r23-hx-prod-fi-b
+          - name: vpc_to_hx-prod-fi-b
+            policy_group: vpc_to_hx-prod-fi-b
             port_blocks:
               - name: block-1
                 description: configured by NAC
@@ -205,24 +173,16 @@ apic:
                 from_port: 6
                 to_port: 6
 
-          - name: vpc_to_r22-lab-gw
-            policy_group: vpc_to_r22-lab-gw
-            port_blocks:
-              - name: block-1
-                description: configured by NAC
-                from_port: 17
-                to_port: 17
-
-          - name: vpc_to_r23-hx-prod-fi-a
-            policy_group: vpc_to_r23-hx-prod-fi-a
+          - name: vpc_to_hx-prod-fi-a
+            policy_group: vpc_to_hx-prod-fi-a
             port_blocks:
               - name: block-1
                 description: configured by NAC
                 from_port: 1
                 to_port: 1
 
-          - name: vpc_to_r23-hx-prod-fi-b
-            policy_group: vpc_to_r23-hx-prod-fi-b
+          - name: vpc_to_hx-prod-fi-b
+            policy_group: vpc_to_hx-prod-fi-b
             port_blocks:
               - name: block-1
                 description: configured by NAC

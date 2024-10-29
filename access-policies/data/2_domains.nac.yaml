@@ -4,8 +4,8 @@ apic:
 
 # Physical Domains
     physical_domains:
-      - name: compute-oob-cimc-mgmt
-        vlan_pool: compute-oob-cimc-mgmt
+      - name: cimc-mgmt
+        vlan_pool: cimc-mgmt
 
       - name: dmz
         vlan_pool: dmz
@@ -72,6 +72,24 @@ apic:
 
       - name: subnet_10.237.99.192_27
         vlan_pool: subnet_10.237.99.192_27
+
+      - name: subnet_10.237.102.0_27
+        vlan_pool: subnet_10.237.102.0_27
+
+      - name: subnet_10.237.102.32_27
+        vlan_pool: subnet_10.237.102.32_27
+
+      - name: subnet_10.237.102.64_27
+        vlan_pool: subnet_10.237.102.64_27        
+
+      - name: subnet_10.237.102.96_27
+        vlan_pool: subnet_10.237.102.96_27
+
+      - name: subnet_10.237.102.128_27
+        vlan_pool: subnet_10.237.102.128_27
+
+      - name: subnet_10.237.102.160_27
+        vlan_pool: subnet_10.237.102.160_27
 
       - name: subnet_192.168.2.0_24
         vlan_pool: subnet_192.168.2.0_24

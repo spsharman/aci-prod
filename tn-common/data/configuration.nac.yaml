@@ -241,16 +241,29 @@ apic:
               filters: 
                 - filter: permit-src-any-dst-any
 
+        - name: inter-vrf
+          description: permit all traffic
+          scope: global
+          subjects:
+            - name: permit-src-any-dst-any
+              filters: 
+                - filter: permit-src-any-dst-any
+
 # VRFs
       vrfs:
         - name: common.vrf-01
           description: configured with NAC
-          # alias: vrf-01
+          alias: external-vrf
+
+        - name: common.vrf-02
+          description: configured with NAC
+          alias: internal-vrf
           contracts:
             providers:
               - intra-tenant
             consumers:
               - intra-tenant
+              - inter-vrf
 
 # L3outs
       l3outs:
@@ -294,629 +307,588 @@ apic:
             - name: all-external-subnets
               subnets:
                 - prefix: 0.0.0.0/0
+                  shared_route_control: true
+                  shared_security: true
+                  import_security: true
+              contracts:
+                providers: 
+                  - inter-vrf
+
 
 # Bridge Domains
       bridge_domains:
-        - name: 10.237.96.16_29
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          subnets:
-            - ip: 10.237.96.17/29
-              public: true
-              private: false
-              shared: false
-              nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.96.24_29
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          subnets:
-            - ip: 10.237.96.25/29
-              public: true
-              private: false
-              shared: false
-              nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.96.32_29
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          subnets:
-            - ip: 10.237.96.33/29
-              public: true
-              private: false
-              shared: false
-              nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.96.40_29
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          subnets:
-            - ip: 10.237.96.41/29
-              public: true
-              private: false
-              shared: false
-              nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.96.48_29
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          subnets:
-            - ip: 10.237.96.49/29
-              public: true
-              private: false
-              shared: false
-              nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
-
-        - name: 10.237.96.56_29
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-01
-          subnets:
-            - ip: 10.237.96.57/29
-              public: true
-              private: false
-              shared: false
-              nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
-
         - name: 10.237.96.64_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.65/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.72_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.73/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.80_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.81/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.88_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.89/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.96_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.97/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.104_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.105/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.112_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.113/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.120_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.121/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.128_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.129/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.152_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.153/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.184_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.185/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.192_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.193/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.96.240_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.96.241/29
               public: true
-              private: false
-              shared: false
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+            # - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.0_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.1/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.40_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.41/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.56_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.57/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.88_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.89/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.112_29
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.113/29
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.128_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.129/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.160_28
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.161/28
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.176_28
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.177/28
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.192_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.193/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.97.224_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.97.225/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.98.0_25
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.98.1/25
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.98.128_25
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.98.129/25
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+            # - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.0_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.1/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.32_28
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.33/28
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.80_28
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.81/28
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.96_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.97/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.160_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.161/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.128_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.129/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.99.192_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.99.193/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 10.237.101.0_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 10.237.101.1/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 10.237.102.0_27
+          description: Rack L09 device management
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 10.237.102.1/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
+
+        - name: 10.237.102.32_27
+          description: Rack L10 device management
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 10.237.103.33/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
+
+        - name: 10.237.102.64_27
+          description: Rack L11 device management
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 10.237.102.65/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
+
+        - name: 10.237.102.96_27
+          description: Rack L14 device management
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 10.237.102.97/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
+
+        - name: 10.237.102.128_27
+          description: Rack L15 device management
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 10.237.102.129/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
+
+        - name: 10.237.102.160_27
+          description: Rack L16 device management
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 10.237.102.161/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
 
         - name: 64.103.44.48_28
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 64.103.44.49/28
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 64.103.44.64_27
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 64.103.44.65/27
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 64.103.44.96_28
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 64.103.44.97/28
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
+
+        - name: 64.103.45.0_27
+          description: Configured with NAC
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 64.103.44.1/27
+              public: true              
+              shared: true
+              nd_ra_prefix: false
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 192.168.1.0_25
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 192.168.1.1/25
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 192.168.1.128_25
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 192.168.1.129/25
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 192.168.2.0_24
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 192.168.2.1/24
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 192.168.3.0_24
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 192.168.3.1/24
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 192.168.8.0_24
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 192.168.8.1/24
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0
 
         - name: 192.168.81.0_24
           description: Configured with NAC
           unknown_unicast: proxy
-          vrf: common.vrf-01
+          vrf: common.vrf-02
           subnets:
             - ip: 192.168.81.1/24
-              public: true
-              private: false
-              shared: false
+              public: true              
+              shared: true
               nd_ra_prefix: false
-          l3outs:
-            - common.vrf-01-ospf-area-0.0.0.0
+          # l3outs:
+          #   - common.vrf-01-ospf-area-0.0.0.0

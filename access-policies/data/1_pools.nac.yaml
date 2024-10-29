@@ -4,7 +4,7 @@ apic:
 
 # VLAN pools  
     vlan_pools:
-      - name: compute-oob-cimc-mgmt
+      - name: cimc-mgmt
         allocation: static
         ranges:
           - from: 998
@@ -18,12 +18,50 @@ apic:
             description: public ip range 64.103.44.64/27
           - from: 3003
             description: public ip range 64.103.44.96/28
+          - from: 3004
+            description: public ip range 64.103.45.0/27
 
       - name: fabric-inband-mgmt
         allocation: static
         ranges:
           - from: 5
             description: fabric inband management
+
+      - name: subnet_10.237.102.0_27
+        allocation: static
+        ranges:
+          - from: 9
+            description: rack L09 device management
+
+      - name: subnet_10.237.102.32_27
+        allocation: static
+        ranges:
+          - from: 10
+            description: rack L10 device management
+
+      - name: subnet_10.237.102.64_27
+        allocation: static
+        ranges:
+          - from: 11
+            description: rack L11 device management
+
+      - name: subnet_10.237.102.96_27
+        allocation: static
+        ranges:
+          - from: 14
+            description: rack L14 device management
+
+      - name: subnet_10.237.102.128_27
+        allocation: static
+        ranges:
+          - from: 15
+            description: rack L15 device management
+
+      - name: subnet_10.237.102.160_27
+        allocation: static
+        ranges:
+          - from: 16
+            description: rack L16 device management
 
       - name: lab-services
         allocation: static

@@ -58,73 +58,79 @@ apic:
         routed_domains:
           - common.vrf-01
 
-      - name: compute-oob-cimc-mgmt
+      - name: cimc-mgmt
         physical_domains:
-          - compute-oob-cimc-mgmt
+          - cimc-mgmt
 
-      - name: hyperflex
+      - name: vlans_allowed_to_hx-prod
         physical_domains:
-          - compute-oob-cimc-mgmt
-          - subnet_10.237.99.32_28
+          - cimc-mgmt
           - dmz
           - lab-services
+          - subnet_10.237.99.32_28
           - vmware
 
-      - name: subnet_10.237.97.176_28
-        physical_domains:
-          - subnet_10.237.97.176_28
-
 # Top of rack switches
-      - name: vpc_to_rack-L09-tor
+      - name: vlans_allowed_to_rack-L09-tor
         description: Hyperflex rack L09
         physical_domains:
+          - cimc-mgmt
           - subnet_10.237.96.64_29
+          - subnet_10.237.102.0_27
+          - vmware
 
-      - name: vpc_to_rack-L10-tor
+      - name: vlans_allowed_to_rack-L10-tor
         description: VXLAN rack L10
         physical_domains:
+          - cimc-mgmt
           - subnet_10.237.96.72_29
-          - compute-oob-cimc-mgmt
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
           - subnet_10.237.99.128_27
+          - subnet_10.237.102.32_27
           - subnet_192.168.2.0_24          
           - subnet_192.168.3.0_24
           - subnet_192.168.8.0_24
           - vmware
 
-      - name: vpc_to_rack-L11-tor
+      - name: vlans_allowed_to_rack-L11-tor
         description: ACI rack L11
         physical_domains:
-          - subnet_10.237.96.80_29
-          - compute-oob-cimc-mgmt
+          - cimc-mgmt
           - dmz
+          - subnet_10.237.96.80_29
           - subnet_10.237.97.176_28
+          - subnet_10.237.102.64_27
           - vmware
 
-      - name: vpc_to_rack-L14-tor
+      - name: vlans_allowed_to_rack-L14-tor
         description: ACI rack L14
         physical_domains:
-          - subnet_10.237.96.88_29
-          - compute-oob-cimc-mgmt
+          - cimc-mgmt
           - dmz
+          - subnet_10.237.96.88_29
           - subnet_10.237.97.176_28
+          - subnet_10.237.102.96_27
           - vmware
 
-      - name: vpc_to_rack-L15-tor
+      - name: vlans_allowed_to_rack-L15-tor
         description: VXLAN rack L15
         physical_domains:
+          - cimc-mgmt
           - subnet_10.237.96.96_29
-          - compute-oob-cimc-mgmt
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
           - subnet_10.237.99.128_27
+          - subnet_10.237.102.128_27
           - subnet_192.168.2.0_24
           - subnet_192.168.3.0_24
           - subnet_192.168.8.0_24
           - vmware
 
-      - name: vpc_to_rack-L16-tor
+      - name: vlans_allowed_to_rack-L16-tor
         description: Hyperflex rack L16
         physical_domains:
+          - cimc-mgmt
           - subnet_10.237.96.104_29
+          - subnet_10.237.102.160_27
+          - vmware
