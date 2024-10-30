@@ -153,6 +153,16 @@ apic:
                   vlan: 998
                   mode: native
                   deployment_immediacy: immediate
+                - node_id: 101
+                  port: 49
+                  vlan: 998
+                  mode: native
+                  deployment_immediacy: immediate
+                - node_id: 102
+                  port: 49
+                  vlan: 998
+                  mode: native
+                  deployment_immediacy: immediate
                 - channel: "vpc_to_rack-L09-tor"
                   vlan: 998
                   node_id: 101

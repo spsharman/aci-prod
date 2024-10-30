@@ -15,6 +15,10 @@ apic:
                 description: hx-prod-fi-a
                 from_port: 7
                 to_port: 7
+              - name: block-2
+                description: Rack L12 RU21 c240-m3
+                from_port: 49
+                to_port: 49
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
@@ -80,6 +84,10 @@ apic:
                 description: hx-prod-fi-b
                 from_port: 7
                 to_port: 7
+              - name: block-2
+                description: Rack L13 RU21 c240-m3
+                from_port: 49
+                to_port: 49
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
