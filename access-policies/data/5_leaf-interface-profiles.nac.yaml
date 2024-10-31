@@ -19,6 +19,14 @@ apic:
                 description: Rack L12 RU21 c240-m3
                 from_port: 49
                 to_port: 49
+              - name: block-3
+                description: Rack L12 RU21 c240-m3 int tbc
+                from_port: 50
+                to_port: 50
+              - name: block-4
+                description: Rack L12 RU21 c240-m3 int tbc
+                from_port: 51
+                to_port: 51
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
@@ -88,6 +96,14 @@ apic:
                 description: Rack L13 RU21 c240-m3
                 from_port: 49
                 to_port: 49
+              - name: block-3
+                description: Rack L13 RU21 c240-m3 int tbc
+                from_port: 50
+                to_port: 50
+              - name: block-4
+                description: Rack L13 RU21 c240-m3 int tbc
+                from_port: 51
+                to_port: 51
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
