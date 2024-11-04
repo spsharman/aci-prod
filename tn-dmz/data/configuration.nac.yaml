@@ -28,6 +28,11 @@ apic:
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
+                - node_id: 101
+                  port: 96
+                  vlan: 3001
+                  mode: native
+                  deployment_immediacy: immediate
 
             - name: 64.103.44.64_27
               alias: 'vlan-3002'

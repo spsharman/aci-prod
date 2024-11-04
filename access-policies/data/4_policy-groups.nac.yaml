@@ -20,6 +20,12 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
 
+      - name: nat-gateway
+        type: access
+        aaep: dmz
+        cdp_policy: cdp-enabled
+        l2_policy: port-local-vlans
+
 # Virtual port channel
       - name: vpc_to_rack-L09-tor
         description: Hyperflex rack L09

@@ -62,6 +62,10 @@ apic:
         physical_domains:
           - cimc-mgmt
 
+      - name: dmz
+        physical_domains:
+          - dmz
+
       - name: vlans_allowed_to_hx-prod
         physical_domains:
           - cimc-mgmt

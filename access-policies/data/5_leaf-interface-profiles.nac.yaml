@@ -28,6 +28,14 @@ apic:
                 from_port: 51
                 to_port: 51
 
+          - name: nat-gateway
+            policy_group: nat-gateway
+            port_blocks:
+              - name: block-1
+                description: nat-gateway outside i/f
+                from_port: 96
+                to_port: 96
+
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex
             policy_group: vpc_to_rack-L09-tor
