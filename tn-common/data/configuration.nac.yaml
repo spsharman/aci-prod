@@ -765,6 +765,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.102.32_27
           description: Rack L10 device management
@@ -775,6 +778,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.102.64_27
           description: Rack L11 device management
@@ -785,6 +791,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.102.96_27
           description: Rack L14 device management
@@ -795,6 +804,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.102.128_27
           description: Rack L15 device management
@@ -805,6 +817,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.102.160_27
           description: Rack L16 device management
@@ -815,7 +830,10 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
+              
         - name: 64.103.44.48_28
           description: Configured with NAC
           unknown_unicast: proxy

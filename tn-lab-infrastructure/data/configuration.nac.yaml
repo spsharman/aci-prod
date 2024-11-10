@@ -172,8 +172,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.97.176_28'
+              description: subnet 10.237.97.176/28 | vlan-997
               bridge_domain: 10.237.97.176_28
-              alias: vlan-997
+              alias: aci
               physical_domains:
                 - subnet_10.237.97.176_28
               static_ports:
@@ -182,30 +183,11 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-                # - node_id: 101
-                #   port: 5
-                #   vlan: 997
-                #   mode: native
-                #   deployment_immediacy: immediate
-                # - node_id: 101
-                #   port: 6
-                #   vlan: 997
-                #   mode: native
-                #   deployment_immediacy: immediate
-                # - node_id: 102
-                #   port: 5
-                #   vlan: 997
-                #   mode: native
-                #   deployment_immediacy: immediate
-                # - node_id: 102
-                #   port: 6
-                #   vlan: 997
-                #   mode: native
-                #   deployment_immediacy: immediate
 
             - name: '10.237.97.192_27'
+              description: subnet 10.237.97.192/27 | vlan-994
               bridge_domain: 10.237.97.192_27
-              alias: vlan-994
+              alias: vxlan
               physical_domains:
                 - subnet_10.237.97.192_27
               static_ports:
@@ -221,9 +203,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.98.0_25'
-              description: Shared CIMC management
+              description: CIMC management | vlan-998
               bridge_domain: 10.237.98.0_25
-              alias: vlan-998
+              alias: cimc
               physical_domains:
                 - cimc-mgmt
               static_ports:
@@ -309,8 +291,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.99.0_27'
+              description: subnet 10.237.99.0/27 | vlan-990
               bridge_domain: 10.237.99.0_27
-              alias: vlan-990
+              alias: vxlan
               physical_domains:
                 - subnet_10.237.99.0_27
               static_ports:
@@ -326,9 +309,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.99.32_28'
-              description: Nexus Dashboard
+              description: Nexus Dashboard | vlan-989
               bridge_domain: 10.237.99.32_28
-              alias: vlan-989
+              alias: nexus-dashboard
               physical_domains:
                 - subnet_10.237.99.32_28
               static_ports:
@@ -344,8 +327,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '10.237.99.128_27'
+              description: subnet 10.237.99.128/27 | vlan-979
               bridge_domain: 10.237.99.128_27
-              alias: vlan-979
+              alias: vxlan
               physical_domains:
                 - subnet_10.237.99.128_27
               static_ports:
@@ -361,8 +345,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '192.168.2.0_24'
+              description: subnet 192.168.2.0/24 | vlan-980
               bridge_domain: 192.168.2.0_24
-              alias: vlan-980
+              alias: vxlan
               physical_domains:
                 - subnet_192.168.2.0_24
               static_ports:
@@ -378,8 +363,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '192.168.3.0_24'
+              description: subnet 192.168.2.0/24 | vlan-985
               bridge_domain: 192.168.3.0_24
-              alias: vlan-985
+              alias: vxlan
               physical_domains:
                 - subnet_192.168.3.0_24
               static_ports:
@@ -395,8 +381,9 @@ apic:
                   deployment_immediacy: immediate
 
             - name: '192.168.8.0_24'
+              description: subnet 192.168.8.0/24 | vlan-995
               bridge_domain: 192.168.8.0_24
-              alias: vlan-995
+              alias: vxlan
               physical_domains:
                 - subnet_192.168.8.0_24
               static_ports:
