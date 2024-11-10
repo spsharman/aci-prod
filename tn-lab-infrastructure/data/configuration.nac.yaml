@@ -6,14 +6,15 @@
 apic:
   tenants:
     - name: lab-infrastructure
-      description: Routable IP range
+      description: This tenant provides lab infrastructure connectivity
 
       application_profiles:      
-        - name: 'top-of-rack-management-subnets'
-          description: EPGs provide the VLAN backing for application workloads
+        - name: 'top-of-rack-switch-management'
+          description: oob management for catalyst c2960s tor
           endpoint_groups:      
-            - name: subnet_10.237.96.64_29
-              alias: rack-l09-tor-hyperflex
+            - name: rack-l09
+              description: subnet 10.237.96.64/29 | vlan-509
+              alias: hyperfabric
               bridge_domain: 10.237.96.64_29
               physical_domains:
                 - subnet_10.237.96.64_29
@@ -24,8 +25,9 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.72_29
-              alias: rack-l10-tor-vxlan
+            - name: rack-l10
+              description: subnet 10.237.96.72/29 | vlan-510
+              alias: vxlan
               bridge_domain: 10.237.96.72_29
               physical_domains:
                 - subnet_10.237.96.72_29
@@ -36,8 +38,9 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.80_29
-              alias: rack-l11-tor-aci
+            - name: rack-l11
+              description: subnet 10.237.96.80/29 | vlan-511
+              alias: aci
               bridge_domain: 10.237.96.80_29
               physical_domains:
                 - subnet_10.237.96.80_29
@@ -48,8 +51,9 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.88_29
-              alias: rack-l14-tor-aci
+            - name: rack-l14
+              description: subnet 10.237.96.88/29 | vlan-514
+              alias: aci
               bridge_domain: 10.237.96.88_29
               physical_domains:
                 - subnet_10.237.96.88_29
@@ -60,8 +64,9 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.96_29
-              alias: rack-l15-tor-vxlan
+            - name: rack-l15
+              description: subnet 10.237.96.96/29 | vlan-515
+              alias: vxlan
               bridge_domain: 10.237.96.96_29
               physical_domains:
                 - subnet_10.237.96.96_29
@@ -72,8 +77,9 @@ apic:
                   node2_id: 102
                   deployment_immediacy: immediate
 
-            - name: subnet_10.237.96.104_29
-              alias: rack-l16-tor-hyperflex
+            - name: rack-l16
+              description: subnet 10.237.96.104/29 | vlan-516
+              alias: hyperfabric
               bridge_domain: 10.237.96.104_29
               physical_domains:
                 - subnet_10.237.96.104_29
@@ -85,8 +91,86 @@ apic:
                   deployment_immediacy: immediate
 
         - name: 'device-management-subnets'
-          description: EPGs provide the VLAN backing for application workloads
+          description: oob management
           endpoint_groups: 
+            - name: 'rack-l09'
+              description: subnet 10.237.102.0/27 | vlan-9
+              bridge_domain: 10.237.102.0_27
+              alias: hyperfabric
+              physical_domains:
+                - subnet_10.237.102.0_27
+              static_ports:
+                - channel: "vpc_to_rack-L09-tor"
+                  vlan: 9
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: 'rack-l10'
+              description: subnet 10.237.102.32/27 | vlan-10
+              bridge_domain: 10.237.102.32_27
+              alias: vxlan
+              physical_domains:
+                - subnet_10.237.102.32_27
+              static_ports:
+                - channel: "vpc_to_rack-L10-tor"
+                  vlan: 10
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: 'rack-l11'
+              description: subnet 10.237.102.64/27 | vlan-11
+              bridge_domain: 10.237.102.64_27
+              alias: aci
+              physical_domains:
+                - subnet_10.237.102.64_27
+              static_ports:
+                - channel: "vpc_to_rack-L11-tor"
+                  vlan: 11
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: 'rack-l14'
+              description: subnet 10.237.102.96/27 | vlan-14
+              bridge_domain: 10.237.102.96_27
+              alias: aci
+              physical_domains:
+                - subnet_10.237.102.96_27
+              static_ports:
+                - channel: "vpc_to_rack-L14-tor"
+                  vlan: 14
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: 'rack-l15'
+              description: subnet 10.237.102.128/27 | vlan 15
+              bridge_domain: 10.237.102.128_27
+              alias: vxlan
+              physical_domains:
+                - subnet_10.237.102.128_27
+              static_ports:
+                - channel: "vpc_to_rack-L15-tor"
+                  vlan: 15
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
+            - name: 'rack-l16'
+              description: subnet 10.237.102.160/27 | vlan-16
+              bridge_domain: 10.237.102.160_27
+              alias: hyperfabric
+              physical_domains:
+                - subnet_10.237.102.160_27
+              static_ports:
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 16
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+
             - name: '10.237.97.176_28'
               bridge_domain: 10.237.97.176_28
               alias: vlan-997
@@ -272,84 +356,6 @@ apic:
                   deployment_immediacy: immediate
                 - channel: "vpc_to_rack-L15-tor"
                   vlan: 979
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: '10.237.102.0_27'
-              description: Rack L09 device management
-              bridge_domain: 10.237.102.0_27
-              alias: vlan-9
-              physical_domains:
-                - subnet_10.237.102.0_27
-              static_ports:
-                - channel: "vpc_to_rack-L09-tor"
-                  vlan: 9
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: '10.237.102.32_27'
-              description: Rack L10 device management
-              bridge_domain: 10.237.102.32_27
-              alias: vlan-10
-              physical_domains:
-                - subnet_10.237.102.32_27
-              static_ports:
-                - channel: "vpc_to_rack-L10-tor"
-                  vlan: 10
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: '10.237.102.64_27'
-              description: Rack L11 device management
-              bridge_domain: 10.237.102.64_27
-              alias: vlan-11
-              physical_domains:
-                - subnet_10.237.102.64_27
-              static_ports:
-                - channel: "vpc_to_rack-L11-tor"
-                  vlan: 11
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: '10.237.102.96_27'
-              description: Rack L14 device management
-              bridge_domain: 10.237.102.96_27
-              alias: vlan-14
-              physical_domains:
-                - subnet_10.237.102.96_27
-              static_ports:
-                - channel: "vpc_to_rack-L14-tor"
-                  vlan: 14
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: '10.237.102.128_27'
-              description: Rack L15 device management
-              bridge_domain: 10.237.102.128_27
-              alias: vlan-15
-              physical_domains:
-                - subnet_10.237.102.128_27
-              static_ports:
-                - channel: "vpc_to_rack-L15-tor"
-                  vlan: 15
-                  node_id: 101
-                  node2_id: 102
-                  deployment_immediacy: immediate
-
-            - name: '10.237.102.160_27'
-              description: Rack L16 device management
-              bridge_domain: 10.237.102.160_27
-              alias: vlan-16
-              physical_domains:
-                - subnet_10.237.102.160_27
-              static_ports:
-                - channel: "vpc_to_rack-L16-tor"
-                  vlan: 16
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
