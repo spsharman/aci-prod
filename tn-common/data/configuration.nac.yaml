@@ -10,6 +10,16 @@ apic:
 
 # Policies
       policies:
+        dhcp_relay_policies:
+          - name: dhcp.uktme.cisco.com
+            description: "dhcp.uktme.cisco.com"
+            providers:
+              - ip: 10.237.97.133
+                type: external_epg
+                tenant: common
+                l3out: common.vrf-01-ospf-area-0.0.0.0
+                external_endpoint_group: all-external-subnets
+
         ospf_interface_policies:
           - name: OSPF_p2p
             cost: unspecified
@@ -326,8 +336,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.72_29
           description: Configured with NAC
@@ -338,8 +349,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.80_29
           description: Configured with NAC
@@ -350,8 +362,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.88_29
           description: Configured with NAC
@@ -362,8 +375,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.96_29
           description: Configured with NAC
@@ -374,8 +388,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.104_29
           description: Configured with NAC
@@ -386,8 +401,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.112_29
           description: Configured with NAC
@@ -398,8 +414,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.120_29
           description: Configured with NAC
@@ -410,8 +427,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.128_29
           description: Configured with NAC
@@ -422,8 +440,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.152_29
           description: Configured with NAC
@@ -434,8 +453,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.184_29
           description: Configured with NAC
@@ -446,8 +466,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.192_27
           description: Configured with NAC
@@ -458,8 +479,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.96.240_29
           description: Configured with NAC
@@ -470,8 +492,9 @@ apic:
               public: true
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-            # - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.0_29
           description: Configured with NAC
@@ -482,8 +505,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.40_29
           description: Configured with NAC
@@ -494,8 +518,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.56_29
           description: Configured with NAC
@@ -506,8 +531,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.88_29
           description: Configured with NAC
@@ -518,8 +544,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.112_29
           description: Configured with NAC
@@ -530,8 +557,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.128_27
           description: Configured with NAC
@@ -542,8 +570,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.160_28
           description: Configured with NAC
@@ -554,8 +583,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.176_28
           description: Configured with NAC
@@ -566,8 +596,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.192_27
           description: Configured with NAC
@@ -578,8 +609,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.97.224_27
           description: Configured with NAC
@@ -590,8 +622,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.98.0_25
           description: Configured with NAC
@@ -602,8 +635,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.98.128_25
           description: Configured with NAC
@@ -614,8 +648,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-            # - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.0_27
           description: Configured with NAC
@@ -626,8 +661,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.32_28
           description: Configured with NAC
@@ -638,8 +674,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.80_28
           description: Configured with NAC
@@ -650,8 +687,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.96_27
           description: Configured with NAC
@@ -662,8 +700,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.160_27
           description: Configured with NAC
@@ -674,8 +713,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.128_27
           description: Configured with NAC
@@ -686,8 +726,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.99.192_27
           description: Configured with NAC
@@ -698,8 +739,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.101.0_27
           description: Configured with NAC
@@ -710,8 +752,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 10.237.102.0_27
           description: Rack L09 device management
@@ -782,8 +825,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 64.103.44.64_27
           description: Configured with NAC
@@ -794,8 +838,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 64.103.44.96_28
           description: Configured with NAC
@@ -806,8 +851,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 64.103.45.0_27
           description: Configured with NAC
@@ -818,8 +864,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 192.168.1.0_25
           description: Configured with NAC
@@ -830,8 +877,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 192.168.1.128_25
           description: Configured with NAC
@@ -842,8 +890,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 192.168.2.0_24
           description: Configured with NAC
@@ -854,8 +903,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 192.168.3.0_24
           description: Configured with NAC
@@ -866,8 +916,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 192.168.8.0_24
           description: Configured with NAC
@@ -878,8 +929,9 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
 
         - name: 192.168.81.0_24
           description: Configured with NAC
@@ -890,5 +942,6 @@ apic:
               public: true              
               shared: true
               nd_ra_prefix: false
-          # l3outs:
-          #   - common.vrf-01-ospf-area-0.0.0.0
+          dhcp_labels:
+            - dhcp_relay_policy: dhcp.uktme.cisco.com
+              scope: tenant
