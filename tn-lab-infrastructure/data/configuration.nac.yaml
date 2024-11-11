@@ -7,7 +7,6 @@ apic:
   tenants:
     - name: lab-infrastructure
       description: This tenant provides lab infrastructure connectivity
-
       application_profiles:      
         - name: 'top-of-rack-switch-management'
           description: oob management for catalyst c2960s tor
