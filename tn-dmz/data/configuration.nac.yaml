@@ -50,6 +50,16 @@ apic:
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L11"
+                  vlan: 3002
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L14"
+                  vlan: 3002
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
 
             - name: 64.103.44.96_28
               alias: vlan-3003
@@ -69,7 +79,7 @@ apic:
                   deployment_immediacy: immediate
 
             - name: 64.103.45.0_27
-              alias: vlan-3003
+              alias: vlan-3004
               bridge_domain: 64.103.45.0_27
               physical_domains:
                 - dmz
