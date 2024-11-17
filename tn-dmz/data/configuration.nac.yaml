@@ -50,12 +50,12 @@ apic:
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
-                - channel: "vpc_to_rack-L11"
+                - channel: "vpc_to_rack-L11-tor"
                   vlan: 3002
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-                - channel: "vpc_to_rack-L14"
+                - channel: "vpc_to_rack-L14-tor"
                   vlan: 3002
                   node_id: 101
                   node2_id: 102
