@@ -34,6 +34,8 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
+        spanning_tree_policy: bpdu-filter-enabled
+        mcp_policy: mcp-enabled
 
       - name: vpc_to_rack-L10-tor
         description: VXLAN rack L10
@@ -42,6 +44,8 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
+        spanning_tree_policy: bpdu-filter-enabled
+        mcp_policy: mcp-enabled
 
       - name: vpc_to_rack-L11-tor
         description: ACI rack L11
@@ -50,6 +54,8 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
+        spanning_tree_policy: bpdu-filter-enabled
+        mcp_policy: mcp-enabled
 
       - name: vpc_to_rack-L14-tor
         description: ACI rack L14
@@ -58,6 +64,8 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
+        spanning_tree_policy: bpdu-filter-enabled
+        mcp_policy: mcp-enabled
 
       - name: vpc_to_rack-L15-tor
         description: VXLAN rack L15
@@ -66,6 +74,8 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
+        spanning_tree_policy: bpdu-filter-enabled
+        mcp_policy: mcp-enabled
 
       - name: vpc_to_rack-L16-tor
         description: Hyperflex rack L16
@@ -74,6 +84,8 @@ apic:
         cdp_policy: cdp-enabled
         l2_policy: port-local-vlans
         port_channel_policy: lacp-active
+        spanning_tree_policy: bpdu-filter-enabled
+        mcp_policy: mcp-enabled
 
       - name: vpc_to_hx-prod-fi-a
         type: vpc

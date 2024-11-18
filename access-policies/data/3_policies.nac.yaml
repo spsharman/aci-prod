@@ -52,6 +52,11 @@ apic:
         - name: mac-pinning
           mode: mac-pin
 
+      spanning_tree_policies:
+        - name: bpdu-filter-enabled
+          bpdu_filter: true
+          # bpdu_guard: true
+
 # Global policies
     aaeps:
       - name: core-routers
