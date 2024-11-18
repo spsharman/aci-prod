@@ -32,7 +32,7 @@ variable "primary_vlan_ids" {
   type        = list(number)
   description = "List of primary VLAN IDs for PVLAN configuration"
   # default     = [3010]
-  default     = []
+  default = []
 }
 
 variable "secondary_vlan_ids" {
@@ -48,7 +48,7 @@ variable "pvlan-portgroups" {
   type        = map(number)
   description = "Port groups and their associated secondary VLAN IDs"
   default = {
-# Port group name should follow the ACI structure 'tenant|application profile|epg'
+    # Port group name should follow the ACI structure 'tenant|application profile|epg'
     # "adealdag|network-segments|192.168.40.0_24" = 3011
   }
 }
@@ -59,9 +59,9 @@ variable "access-portgroups" {
   description = "Access Port groups"
   default = {
     "10.237.99.32_28_nd-data-network" = 989
-    "64.103.44.48_28_dmz_vlan-3001" = 3001
-    "64.103.44.64_27_dmz_vlan-3001" = 3002
-    "64.103.44.96_28_dmz_vlan-3001" = 3003
-    "64.103.45.0_27_dmz_vlan-3001" = 3004
+    "64.103.44.48_28_dmz_vlan-3001"   = 3001
+    "64.103.44.64_27_dmz_vlan-3002"   = 3002
+    "64.103.44.96_28_dmz_vlan-3003"   = 3003
+    "64.103.45.0_27_dmz_vlan-3004"    = 3004
   }
 }
