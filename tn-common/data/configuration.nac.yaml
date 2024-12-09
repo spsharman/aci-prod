@@ -743,19 +743,6 @@ apic:
             - dhcp_relay_policy: dhcp.uktme.cisco.com
               scope: tenant
 
-        - name: 10.237.101.0_27
-          description: Configured with NAC
-          unknown_unicast: proxy
-          vrf: common.vrf-02
-          subnets:
-            - ip: 10.237.101.1/27
-              public: true              
-              shared: true
-              nd_ra_prefix: false
-          dhcp_labels:
-            - dhcp_relay_policy: dhcp.uktme.cisco.com
-              scope: tenant
-
         - name: 10.237.102.0_27
           description: Rack L09 device management
           unknown_unicast: proxy
