@@ -92,6 +92,7 @@ apic:
         description: VXLAN rack L10
         physical_domains:
           - cimc-mgmt
+          - dmz
           - subnet_10.237.96.72_29
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
@@ -126,6 +127,7 @@ apic:
         description: VXLAN rack L15
         physical_domains:
           - cimc-mgmt
+          - dmz
           - subnet_10.237.96.96_29
           - subnet_10.237.97.192_27
           - subnet_10.237.99.0_27
