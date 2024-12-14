@@ -298,7 +298,7 @@ apic:
                   interfaces:
                     - node_id: 103
                       port: 6
-                      ip: 10.237.99.242/30
+                      ip: 10.237.96.1/31
                       mtu: inherit
                   ospf:
                     policy: OSPF_p2p
@@ -307,7 +307,7 @@ apic:
                   interfaces:
                     - node_id: 104
                       port: 6
-                      ip: 10.237.99.246/30
+                      ip: 10.237.96.3/31
                       mtu: inherit
                   ospf:
                     policy: OSPF_p2p
