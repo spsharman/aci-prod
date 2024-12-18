@@ -1,0 +1,44 @@
+core-02
+
+interface Ethernet1/6
+  description leaf 104/1/6
+  mtu 9000
+  vrf member core
+  ip address 10.237.96.2/31
+  no ip ospf network point-to-point
+  no ip router ospf core area 0.0.0.0
+  no shutdown
+
+ip prefix-list bgp-routes-from-AS-64512 seq 10 permit 0.0.0.0/0 le 32
+
+route-map bgp-routes-from-AS-64512 permit 10
+  match ip address prefix-list bgp-routes-from-AS-64512
+
+router bgp 64800
+  vrf core
+    router-id 23.0.0.12
+    address-family ipv4 unicast
+      network 10.237.96.0/21
+      redistribute direct route-map connected-interfaces
+      redistribute ospf core route-map ospf-routes-from-core-vrf-area-0.0.0.0
+    neighbor 10.237.96.3
+      remote-as 64512
+      address-family ipv4 unicast
+        next-hop-self
+        soft-reconfiguration inbound always
+    neighbor 10.237.96.4
+      remote-as 64800
+      address-family ipv4 unicast
+        next-hop-self
+        soft-reconfiguration inbound always
+    neighbor 10.237.96.9
+      remote-as 64800
+      address-family ipv4 unicast
+        next-hop-self
+        soft-reconfiguration inbound always
+    neighbor 10.237.96.15
+      remote-as 64800
+      address-family ipv4 unicast
+        route-map local-preference-50 in
+        next-hop-self
+        soft-reconfiguration inbound always

@@ -1,0 +1,16 @@
+core-01
+
+router bgp 64800
+  vrf core
+    router-id 23.0.0.11
+    address-family ipv4 unicast
+      network 10.237.96.0/21
+      redistribute direct route-map connected-interfaces
+      redistribute ospf core route-map ospf-routes-from-core-vrf-area-0.0.0.0
+      aggregate-address 10.237.96.0/21 summary-only
+      default-information originate
+    neighbor 10.237.96.1
+      remote-as 64512
+      address-family ipv4 unicast
+        next-hop-self
+        soft-reconfiguration inbound always

@@ -17,7 +17,7 @@ apic:
               - ip: 10.237.97.133
                 type: external_epg
                 tenant: common
-                l3out: common.vrf-01-ospf-area-0.0.0.0
+                l3out: common.vrf-01-bgp-AS-64800
                 external_endpoint_group: all-external-subnets
 
         ospf_interface_policies:
@@ -275,23 +275,162 @@ apic:
               - intra-tenant
               - inter-vrf
 
-# L3outs
+# L3out OSPF
       l3outs:
-        - name: common.vrf-01-ospf-area-0.0.0.0
+#         - name: common.vrf-01-ospf-area-0.0.0.0
+#           description: configured with NAC
+#           vrf: common.vrf-01
+#           domain: common.vrf-01
+#           ospf:
+#             area: 0.0.0.0
+#             area_type: regular
+# # Nodes
+#           node_profiles:
+#             - name: border-leafs
+#               nodes:
+#                 - node_id: 103
+#                   router_id: 103.1.1.1
+#                 # - node_id: 104
+#                 #   router_id: 104.1.1.1
+# # Interfaces
+#               interface_profiles:
+#                 - name: leaf-103-eth6
+#                   interfaces:
+#                     - node_id: 103
+#                       port: 6
+#                       ip: 10.237.96.1/31
+#                       mtu: inherit
+#                   ospf:
+#                     policy: OSPF_p2p
+
+#                 # - name: leaf-104-eth6
+#                 #   interfaces:
+#                 #     - node_id: 104
+#                 #       port: 6
+#                 #       ip: 10.237.96.3/31
+#                 #       mtu: inherit
+#                 #   ospf:
+#                 #     policy: OSPF_p2p
+
+# # extEPG all external subnets
+#           external_endpoint_groups:
+#             - name: all-external-subnets
+#               subnets:
+#                 - prefix: 0.0.0.0/0
+#                   shared_route_control: true
+#                   shared_security: true
+#                   import_security: true
+#               contracts:
+#                 providers: 
+#                   - inter-vrf
+
+# L3out BGP
+        - name: common.vrf-01-bgp-AS-64800
           description: configured with NAC
           vrf: common.vrf-01
           domain: common.vrf-01
           ospf:
             area: 0.0.0.0
             area_type: regular
+
 # Nodes
           node_profiles:
             - name: border-leafs
+              # bgp_peers:
+              #   - ip: 10.237.96.16/32
+              #     remote_as: 64800
+              #     # local_as: 64800
+              #     allow_self_as: false
+              #     as_override: false
+              #     disable_peer_as_check: false
+              #     next_hop_self: false
+              #     send_community: false
+              #     send_ext_community: false
+              #     allowed_self_as_count: 3
+              #     bfd: false
+              #     disable_connected_check: false
+              #     ttl: 2
+              #     remove_all_private_as: false
+              #     remove_private_as: false
+              #     replace_private_as_with_local_as: false
+              #     unicast_address_family: true
+              #     multicast_address_family: true
+              #     admin_state: true
+              #     as_propagate: none  
+
+              #   - ip: 10.237.96.17/32
+              #     remote_as: 64800
+              #     # local_as: 64800
+              #     allow_self_as: false
+              #     as_override: false
+              #     disable_peer_as_check: false
+              #     next_hop_self: false
+              #     send_community: false
+              #     send_ext_community: false
+              #     allowed_self_as_count: 3
+              #     bfd: false
+              #     disable_connected_check: false
+              #     ttl: 2
+              #     remove_all_private_as: false
+              #     remove_private_as: false
+              #     replace_private_as_with_local_as: false
+              #     unicast_address_family: true
+              #     multicast_address_family: true
+              #     admin_state: true
+              #     as_propagate: none 
+
+              #   - ip: 10.237.96.18/32
+              #     remote_as: 64800
+              #     # local_as: 64800
+              #     allow_self_as: false
+              #     as_override: false
+              #     disable_peer_as_check: false
+              #     next_hop_self: false
+              #     send_community: false
+              #     send_ext_community: false
+              #     allowed_self_as_count: 3
+              #     bfd: false
+              #     disable_connected_check: false
+              #     ttl: 2
+              #     remove_all_private_as: false
+              #     remove_private_as: false
+              #     replace_private_as_with_local_as: false
+              #     unicast_address_family: true
+              #     multicast_address_family: true
+              #     admin_state: true
+              #     as_propagate: none 
+
+              #   - ip: 10.237.96.19/32
+              #     remote_as: 64800
+              #     # local_as: 64800
+              #     allow_self_as: false
+              #     as_override: false
+              #     disable_peer_as_check: false
+              #     next_hop_self: false
+              #     send_community: false
+              #     send_ext_community: false
+              #     allowed_self_as_count: 3
+              #     bfd: false
+              #     disable_connected_check: false
+              #     ttl: 2
+              #     remove_all_private_as: false
+              #     remove_private_as: false
+              #     replace_private_as_with_local_as: false
+              #     unicast_address_family: true
+              #     multicast_address_family: true
+              #     admin_state: true
+              #     as_propagate: none 
+
               nodes:
                 - node_id: 103
                   router_id: 103.1.1.1
+                  router_id_as_loopback: false
+                  loopback: 10.237.96.20
                 - node_id: 104
                   router_id: 104.1.1.1
+                  router_id_as_loopback: false
+                  loopback: 10.237.96.21
+
 # Interfaces
               interface_profiles:
                 - name: leaf-103-eth6
@@ -300,6 +439,91 @@ apic:
                       port: 6
                       ip: 10.237.96.1/31
                       mtu: inherit
+                      bgp_peers:
+                        - ip: 10.237.96.16/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none  
+
+                        - ip: 10.237.96.17/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none 
+
+                        - ip: 10.237.96.18/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none 
+
+                        - ip: 10.237.96.19/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none 
+
                   ospf:
                     policy: OSPF_p2p
 
@@ -309,6 +533,91 @@ apic:
                       port: 6
                       ip: 10.237.96.3/31
                       mtu: inherit
+                      bgp_peers:
+                        - ip: 10.237.96.16/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none  
+
+                        - ip: 10.237.96.17/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none 
+
+                        - ip: 10.237.96.18/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none 
+
+                        - ip: 10.237.96.19/32
+                          remote_as: 64800
+                          # local_as: 64800
+                          allow_self_as: false
+                          as_override: false
+                          disable_peer_as_check: false
+                          next_hop_self: false
+                          send_community: false
+                          send_ext_community: false
+                          allowed_self_as_count: 3
+                          bfd: false
+                          disable_connected_check: false
+                          ttl: 2
+                          remove_all_private_as: false
+                          remove_private_as: false
+                          replace_private_as_with_local_as: false
+                          unicast_address_family: true
+                          multicast_address_family: true
+                          admin_state: true
+                          as_propagate: none 
+
                   ospf:
                     policy: OSPF_p2p
 
@@ -323,7 +632,6 @@ apic:
               contracts:
                 providers: 
                   - inter-vrf
-
 
 # Bridge Domains
       bridge_domains:
