@@ -84,6 +84,7 @@ apic:
         description: Hyperflex rack L09
         physical_domains:
           - cimc-mgmt
+          - dmz
           - subnet_10.237.96.64_29
           - subnet_10.237.102.0_27
           - vmware
@@ -142,6 +143,7 @@ apic:
         description: Hyperflex rack L16
         physical_domains:
           - cimc-mgmt
+          - dmz
           - subnet_10.237.96.104_29
           - subnet_10.237.102.160_27
           - vmware

@@ -33,6 +33,36 @@ apic:
                   vlan: 3001
                   mode: native
                   deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L09-tor"
+                  vlan: 3001
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L10-tor"
+                  vlan: 3001
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L11-tor"
+                  vlan: 3001
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L14-tor"
+                  vlan: 3001
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L15-tor"
+                  vlan: 3001
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 3001
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
 
             - name: 64.103.44.64_27
               alias: 'vlan-3002'
@@ -49,6 +79,11 @@ apic:
                   vlan: 3002
                   node_id: 103
                   node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L09-tor"
+                  vlan: 3002
+                  node_id: 101
+                  node2_id: 102
                   deployment_immediacy: immediate
                 - channel: "vpc_to_rack-L10-tor"
                   vlan: 3002
@@ -70,7 +105,11 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
-
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 3002
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
 
             - name: 64.103.44.96_28
               alias: vlan-3003
@@ -88,6 +127,36 @@ apic:
                   node_id: 103
                   node2_id: 104
                   deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L09-tor"
+                  vlan: 3003
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L10-tor"
+                  vlan: 3003
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L11-tor"
+                  vlan: 3003
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L14-tor"
+                  vlan: 3003
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L15-tor"
+                  vlan: 3003
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 3003
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
 
             - name: 64.103.45.0_27
               alias: vlan-3004
@@ -104,4 +173,34 @@ apic:
                   vlan: 3004
                   node_id: 103
                   node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L09-tor"
+                  vlan: 3004
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L10-tor"
+                  vlan: 3004
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L11-tor"
+                  vlan: 3004
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L14-tor"
+                  vlan: 3004
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L15-tor"
+                  vlan: 3004
+                  node_id: 101
+                  node2_id: 102
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_rack-L16-tor"
+                  vlan: 3004
+                  node_id: 101
+                  node2_id: 102
                   deployment_immediacy: immediate
