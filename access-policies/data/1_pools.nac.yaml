@@ -12,6 +12,8 @@ apic:
       - name: dmz
         allocation: static
         ranges:
+          - from: 666
+            description: pbr redirect
           - from: 3001
             description: public ip range 64.103.44.48/28
           - from: 3002

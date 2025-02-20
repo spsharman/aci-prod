@@ -34,6 +34,72 @@ apic:
             lsa_retransmit_interval: 5
             lsa_transmit_delay: 1
 
+      services:
+        l4l7_devices:
+          - name: core-services-ftdv-7.6.0-113-01
+            context_aware: single-Context
+            type: PHYSICAL
+            function: GoTo
+            service_type: FW
+            trunking: false
+            physical_domain: dmz
+            concrete_devices:
+              - name: core-services-ftdv-7.6.0-113-01
+                interfaces:
+                  - name: data-fi-a
+                    node_id: 101
+                    node2_id: 102
+                    channel: vpc_to_hx-prod-fi-a
+                  - name: data-fi-b
+                    node_id: 101
+                    node2_id: 102
+                    channel: vpc_to_hx-prod-fi-b
+            logical_interfaces:
+              - name: data
+                vlan: 666
+                concrete_interfaces:
+                  - device: core-services-ftdv-7.6.0-113-01
+                    interface_name: data-fi-a
+                  - device: core-services-ftdv-7.6.0-113-01
+                    interface_name: data-fi-b
+
+        redirect_policies:
+          - name: core-services-ftdv-7.6.0-113-01
+            anycast: true
+            pod_aware: false
+            l3_destinations:
+              - ip: 6.6.6.10
+                mac: 00:50:56:80:f1:23
+
+        service_graph_templates:
+          - name: core-services-ftdv-7.6.0-113-01
+            template_type: FW_ROUTED
+            redirect: true
+            share_encapsulation: false
+            device:
+              tenant: common
+              name: core-services-ftdv-7.6.0-113-01
+            consumer:
+              direct_connect: false
+            provider:
+              direct_connect: true
+
+        device_selection_policies:
+          - contract: any
+            service_graph_template: core-services-ftdv-7.6.0-113-01
+            consumer:
+              redirect_policy:
+                name: core-services-ftdv-7.6.0-113-01
+              logical_interface: data
+              bridge_domain:
+                name: 6.6.6.0_24
+            provider:
+              redirect_policy:
+                name: core-services-ftdv-7.6.0-113-01
+              logical_interface: data
+              bridge_domain:
+                name: 6.6.6.0_24
+
 # Filters
       filters:
 # ICMP
@@ -635,6 +701,17 @@ apic:
 
 # Bridge Domains
       bridge_domains:
+        - name: 6.6.6.0_24
+          description: pbr redirect
+          alias: lab-subnet
+          unknown_unicast: proxy
+          vrf: common.vrf-02
+          subnets:
+            - ip: 6.6.6.1/24
+              public: false
+              shared: false
+              nd_ra_prefix: false
+
         - name: 10.237.96.64_29
           description: Configured with NAC
           unknown_unicast: proxy
