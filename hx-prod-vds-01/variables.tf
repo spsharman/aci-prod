@@ -58,6 +58,7 @@ variable "access-portgroups" {
   type        = map(number)
   description = "Access Port groups"
   default = {
+    "10.237.102.160_27" = 16
     "6.6.6.0_24_pbr-redirect" = 666
     "10.237.99.32_28_nd-data-network" = 989
     "64.103.44.48_28_dmz_vlan-3001"   = 3001

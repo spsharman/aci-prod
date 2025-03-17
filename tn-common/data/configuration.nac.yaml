@@ -113,176 +113,57 @@ apic:
             - name: 'permit-src-any-dst-any'
               ethertype: unspecified
 
+        - name: permit-tcp-src-any-dst-any-stateful
+          entries:
+            - name: tcp-src-any-dst-any-stateful
+              ethertype: ip
+              protocol: tcp
+              stateful: true
+
 # TCP filters
-        - name: 'permit-tcp-src-any-dst-22'
-          entries:
-            - name: 'permit-tcp-src-any-dst-22'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 22
-              destination_to_port: 22
+        # - name: 'permit-tcp-src-any-dst-22'
+        #   entries:
+        #     - name: permit-tcp-src-any-dst-22
+        #       ethertype: ipv4
+        #       protocol: tcp
+        #       destination_from_port: 22
+        #       destination_to_port: 22
 
-        - name: 'permit-tcp-src-any-dst-23'
-          entries:
-            - name: 'permit-tcp-src-any-dst-23'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 23
-              destination_to_port: 23
+        # - name: 'permit-tcp-src-any-dst-80'
+        #   entries:
+        #     - name: 'permit-tcp-src-any-dst-80'
+        #       ethertype: ipv4
+        #       protocol: tcp
+        #       destination_from_port: 80
+        #       destination_to_port: 80
 
-        - name: 'permit-tcp-src-any-dst-80'
-          entries:
-            - name: 'permit-tcp-src-any-dst-80'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 80
-              destination_to_port: 80
+        # - name: 'permit-tcp-src-any-dst-443'
+        #   entries:
+        #     - name: 'permit-tcp-src-any-dst-443'
+        #       ethertype: ipv4
+        #       protocol: tcp
+        #       destination_from_port: 443
+        #       destination_to_port: 443
 
-        - name: 'permit-tcp-src-any-dst-443'
+        - name: 'permit-tcp-src-any-dst-443-stateful'
           entries:
             - name: 'permit-tcp-src-any-dst-443'
               ethertype: ipv4
               protocol: tcp
               destination_from_port: 443
               destination_to_port: 443
-
-        - name: 'permit-tcp-src-any-dst-1111'
-          entries:
-            - name: 'permit-tcp-src-any-dst-1111'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 1111
-              destination_to_port: 1111
-
-        - name: 'permit-tcp-src-any-dst-1112'
-          entries:
-            - name: 'permit-tcp-src-any-dst-1112'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 1112
-              destination_to_port: 1112
-
-        - name: 'permit-tcp-src-any-dst-1168'
-          entries:
-            - name: 'permit-tcp-src-any-dst-1168'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 1168
-              destination_to_port: 1168
-
-        - name: 'permit-tcp-src-any-dst-1169'
-          entries:
-            - name: 'permit-tcp-src-any-dst-1169'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 1169
-              destination_to_port: 1169
-
-        - name: 'permit-tcp-src-any-dst-1433'
-          entries:
-            - name: 'permit-tcp-src-any-dst-1433'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 1433
-              destination_to_port: 1433
-
-        - name: 'permit-tcp-src-any-dst-1455'
-          entries:
-            - name: 'permit-tcp-src-any-dst-1455'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 1455
-              destination_to_port: 1455
-
-        - name: 'permit-tcp-src-any-dst-3306'
-          entries:
-            - name: 'permit-tcp-src-any-dst-3306'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 3306
-              destination_to_port: 3306
-
-        - name: 'permit-tcp-src-any-dst-3307'
-          entries:
-            - name: 'permit-tcp-src-any-dst-3307'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 3307
-              destination_to_port: 3307
-
-        - name: 'permit-tcp-src-any-dst-5551'
-          entries:
-            - name: 'permit-tcp-src-any-dst-5551'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 5551
-              destination_to_port: 5551
-
-        - name: 'permit-tcp-src-any-dst-5671'
-          entries:
-            - name: 'permit-tcp-src-any-dst-5671'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 5671
-              destination_to_port: 5671
-
-        - name: 'permit-tcp-src-any-dst-6443'
-          entries:
-            - name: 'permit-tcp-src-any-dst-6443'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 6443
-              destination_to_port: 6443
-
-        - name: 'permit-tcp-src-any-dst-6666'
-          entries:
-            - name: 'permit-tcp-src-any-dst-6666'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 6666
-              destination_to_port: 6666
-
-        - name: 'permit-tcp-src-any-dst-7777'
-          entries:
-            - name: 'permit-tcp-src-any-dst-7777'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 7777
-              destination_to_port: 7777
-
-        - name: 'permit-tcp-src-any-dst-8086'
-          entries:
-            - name: 'permit-tcp-src-any-dst-8086'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 8086
-              destination_to_port: 8086
-
-        - name: 'permit-tcp-src-any-dst-8443'
-          entries:
-            - name: 'permit-tcp-src-any-dst-8443'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 8443
-              destination_to_port: 8443
-
-        - name: 'permit-tcp-src-any-dst-9898'
-          entries:
-            - name: 'permit-tcp-src-any-dst-9898'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 9898
-              destination_to_port: 9898
-
-        - name: 'permit-tcp-src-any-dst-9999'
-          entries:
-            - name: 'permit-tcp-src-any-dst-9999'
-              ethertype: ipv4
-              protocol: tcp
-              destination_from_port: 9999
-              destination_to_port: 9999
+              stateful: true
 
 # UDP filters
+        - name: permit-udp-src-any-dst-any
+          entries:
+            - name: permit-udp-src-any-dst-any
+              ethertype: ip
+              protocol: udp
+              destination_from_port: unspecified
+              destination_to_port: unspecified
+              stateful: false
+
         - name: 'permit-udp-src-any-dst-53'
           entries:
             - name: 'permit-udp-src-any-dst-53'
@@ -298,14 +179,6 @@ apic:
               protocol: udp
               destination_from_port: 123
               destination_to_port: 123
-
-        - name: 'permit-udp-src-any-dst-4444'
-          entries:
-            - name: 'permit-udp-src-any-dst-4444'
-              ethertype: ipv4
-              protocol: udp
-              destination_from_port: 4444
-              destination_to_port: 4444
 
 # Contracts
       contracts:
@@ -325,6 +198,74 @@ apic:
               filters: 
                 - filter: permit-src-any-dst-any
 
+        - name: permit-to-epg-64.103.44.48_28
+          scope: global
+          subjects:
+            - name: tcp
+              filters:
+                - filter: 'permit-tcp-src-any-dst-443-stateful'
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
+
+        - name: permit-to-epg-64.103.44.64_27
+          scope: global
+          subjects:
+            - name: tcp
+              filters:
+                - filter: 'permit-tcp-src-any-dst-443-stateful'
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
+
+        - name: permit-to-epg-64.103.44.96_28
+          scope: global
+          subjects:
+            - name: tcp
+              filters:
+                - filter: 'permit-tcp-src-any-dst-443-stateful'
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
+
+        - name: permit-to-epg-64.103.45.0_27
+          scope: global
+          subjects:
+            - name: tcp
+              filters:
+                - filter: 'permit-tcp-src-any-dst-443-stateful'
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
+
+        - name: permit-to-all-external-subnets-stateful
+          scope: global
+          subjects:
+            - name: tcp
+              filters:
+                - filter: permit-tcp-src-any-dst-any-stateful
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
+            - name: udp
+              filters:
+                - filter: permit-udp-src-any-dst-any
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
+            - name: icmp
+              filters:
+                - filter: icmp
+                  action: permit
+                  priority: default
+                  log: false
+                  no_stats: false
 # VRFs
       vrfs:
         - name: common.vrf-01
@@ -340,6 +281,7 @@ apic:
             consumers:
               - intra-tenant
               - inter-vrf
+              # - permit-to-all-external-subnets-stateful
 
 # L3out OSPF
       l3outs:
@@ -698,6 +640,12 @@ apic:
               contracts:
                 providers: 
                   - inter-vrf
+                #   - permit-to-all-external-subnets-stateful
+                # consumers:
+                #   - permit-to-epg-64.103.44.48_28
+                #   - permit-to-epg-64.103.44.64_27
+                #   - permit-to-epg-64.103.44.96_28
+                #   - permit-to-epg-64.103.45.0_27
 
 # Bridge Domains
       bridge_domains:

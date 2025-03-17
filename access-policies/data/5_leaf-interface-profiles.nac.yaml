@@ -33,8 +33,8 @@ apic:
             port_blocks:
               - name: block-1
                 description: nat-gateway outside i/f
-                from_port: 96
-                to_port: 96
+                from_port: 48
+                to_port: 48
 
           - name: vpc_to_rack-L09-tor
             description: Rack L09 Hyperfex

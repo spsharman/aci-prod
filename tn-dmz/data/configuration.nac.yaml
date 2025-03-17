@@ -29,7 +29,7 @@ apic:
                   node2_id: 104
                   deployment_immediacy: immediate
                 - node_id: 101
-                  port: 96
+                  port: 48
                   vlan: 3001
                   mode: native
                   deployment_immediacy: immediate
@@ -63,6 +63,9 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
+              # contracts:
+              #   providers:
+              #     - permit-to-epg-64.103.44.48_28
 
             - name: 64.103.44.64_27
               alias: 'vlan-3002'
@@ -110,6 +113,9 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
+              # contracts:
+              #   providers:
+              #     - permit-to-epg-64.103.44.64_27
 
             - name: 64.103.44.96_28
               alias: vlan-3003
@@ -157,6 +163,9 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
+              # contracts:
+              #   providers:
+              #     - permit-to-epg-64.103.44.96_28
 
             - name: 64.103.45.0_27
               alias: vlan-3004
@@ -204,3 +213,6 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
+              # contracts:
+              #   providers:
+              #     - permit-to-epg-64.103.45.0_27

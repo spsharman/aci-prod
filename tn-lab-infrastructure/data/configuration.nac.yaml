@@ -169,6 +169,16 @@ apic:
                   node_id: 101
                   node2_id: 102
                   deployment_immediacy: immediate
+                - channel: "vpc_to_hx-prod-fi-a"
+                  vlan: 16
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
+                - channel: "vpc_to_hx-prod-fi-b"
+                  vlan: 16
+                  node_id: 103
+                  node2_id: 104
+                  deployment_immediacy: immediate
 
             - name: '10.237.97.176_28'
               description: subnet 10.237.97.176/28 | vlan-997

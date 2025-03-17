@@ -1,1 +1,749 @@
-{"totalCount":"1","imdata":[{"fvTenant":{"attributes":{"annotation":"","descr":"","dn":"uni/tn-mgmt","name":"mgmt","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzOOBBrCP":{"attributes":{"annotation":"","descr":"","intent":"install","name":"default","nameAlias":"","ownerKey":"","ownerTag":"","prio":"unspecified","scope":"context","targetDscp":"unspecified"},"children":[{"vzSubj":{"attributes":{"annotation":"","consMatchT":"AtleastOne","descr":"","name":"oob-default-subj","nameAlias":"","prio":"unspecified","provMatchT":"AtleastOne","revFltPorts":"yes","targetDscp":"unspecified"},"children":[{"vzRsSubjFiltAtt":{"attributes":{"action":"permit","annotation":"","directives":"","priorityOverride":"default","tnVzFilterName":"https-filter"}}},{"vzRsSubjFiltAtt":{"attributes":{"action":"permit","annotation":"","directives":"","priorityOverride":"default","tnVzFilterName":"http-filter"}}},{"vzRsSubjFiltAtt":{"attributes":{"action":"permit","annotation":"","directives":"","priorityOverride":"default","tnVzFilterName":"ntp-filter"}}},{"vzRsSubjFiltAtt":{"attributes":{"action":"permit","annotation":"","directives":"","priorityOverride":"default","tnVzFilterName":"icmp-filter"}}},{"vzRsSubjFiltAtt":{"attributes":{"action":"permit","annotation":"","directives":"","priorityOverride":"default","tnVzFilterName":"ssh-filter"}}},{"vzRsSubjFiltAtt":{"attributes":{"action":"permit","annotation":"","directives":"","priorityOverride":"default","tnVzFilterName":"snmp-filter"}}}]}}]}},{"vnsSvcCont":{"attributes":{"annotation":""}}},{"mgmtMgmtP":{"attributes":{"annotation":"","descr":"","name":"default","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"mgmtOoB":{"attributes":{"annotation":"","descr":"","name":"default","nameAlias":"","prio":"unspecified"},"children":[{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.209/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-102","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.208/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-101","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.210/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-103","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.207/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-202","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.201/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-1","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.206/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-201","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBStNode":{"attributes":{"addr":"10.237.96.211/27","annotation":"","descr":"","gw":"10.237.96.193","tDn":"topology/pod-1/node-104","v6Addr":"::","v6Gw":"::"}}},{"mgmtRsOoBProv":{"attributes":{"annotation":"","prio":"unspecified","tnVzOOBBrCPName":"default"}}}]}}]}},{"mgmtExtMgmtEntity":{"attributes":{"annotation":"","descr":"","name":"default","nameAlias":"","ownerKey":"","ownerTag":""}}},{"vzFilter":{"attributes":{"annotation":"","descr":"","name":"snmp-filter","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"161","dToPort":"162","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"snmp","nameAlias":"","prot":"udp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}}]}},{"vzFilter":{"attributes":{"annotation":"","descr":"","name":"ntp-filter","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"123","dToPort":"123","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"ntp","nameAlias":"","prot":"udp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}}]}},{"vzFilter":{"attributes":{"annotation":"","descr":"","name":"icmp-filter","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"unspecified","dToPort":"unspecified","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"icmp","nameAlias":"","prot":"icmp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}}]}},{"vzFilter":{"attributes":{"annotation":"","descr":"","name":"https-filter","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"https","dToPort":"https","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"https","nameAlias":"","prot":"tcp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}}]}},{"vzFilter":{"attributes":{"annotation":"","descr":"","name":"http-filter","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"http","dToPort":"http","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"http","nameAlias":"","prot":"tcp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}}]}},{"vzFilter":{"attributes":{"annotation":"","descr":"","name":"ssh-filter","nameAlias":"","ownerKey":"","ownerTag":""},"children":[{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"22","dToPort":"22","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"ssh","nameAlias":"","prot":"tcp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}},{"vzEntry":{"attributes":{"annotation":"","applyToFrag":"no","arpOpc":"unspecified","dFromPort":"4200","dToPort":"4200","descr":"","etherT":"ip","icmpv4T":"unspecified","icmpv6T":"unspecified","matchDscp":"unspecified","name":"ssh-via-web","nameAlias":"","prot":"tcp","sFromPort":"unspecified","sToPort":"unspecified","stateful":"no","tcpRules":""}}}]}},{"fvRsTenantMonPol":{"attributes":{"annotation":"","tnMonEPGPolName":""}}},{"fvCtx":{"attributes":{"annotation":"","bdEnforcedEnable":"no","descr":"","ipDataPlaneLearning":"enabled","knwMcastAct":"permit","name":"oob","nameAlias":"","ownerKey":"","ownerTag":"","pcEnfDir":"ingress","pcEnfPref":"enforced"},"children":[{"fvRsVrfValidationPol":{"attributes":{"annotation":"","tnL3extVrfValidationPolName":""}}},{"vzAny":{"attributes":{"annotation":"","descr":"","matchT":"AtleastOne","name":"","nameAlias":"","prefGrMemb":"disabled"}}},{"fvRsOspfCtxPol":{"attributes":{"annotation":"","tnOspfCtxPolName":""}}},{"fvRsCtxToEpRet":{"attributes":{"annotation":"","tnFvEpRetPolName":""}}},{"fvRsCtxToExtRouteTagPol":{"attributes":{"annotation":"","tnL3extRouteTagPolName":""}}},{"fvRsBgpCtxPol":{"attributes":{"annotation":"","tnBgpCtxPolName":""}}}]}},{"fvCtx":{"attributes":{"annotation":"","bdEnforcedEnable":"no","descr":"","ipDataPlaneLearning":"enabled","knwMcastAct":"permit","name":"inb","nameAlias":"","ownerKey":"","ownerTag":"","pcEnfDir":"ingress","pcEnfPref":"enforced"},"children":[{"fvRsVrfValidationPol":{"attributes":{"annotation":"","tnL3extVrfValidationPolName":""}}},{"vzAny":{"attributes":{"annotation":"","descr":"","matchT":"AtleastOne","name":"","nameAlias":"","prefGrMemb":"disabled"}}},{"fvRsOspfCtxPol":{"attributes":{"annotation":"","tnOspfCtxPolName":""}}},{"fvRsCtxToEpRet":{"attributes":{"annotation":"","tnFvEpRetPolName":""}}},{"fvRsCtxToExtRouteTagPol":{"attributes":{"annotation":"","tnL3extRouteTagPolName":""}}},{"fvRsBgpCtxPol":{"attributes":{"annotation":"","tnBgpCtxPolName":""}}}]}},{"fvBD":{"attributes":{"OptimizeWanBandwidth":"no","annotation":"","arpFlood":"no","descr":"","epClear":"no","epMoveDetectMode":"","hostBasedRouting":"no","intersiteBumTrafficAllow":"no","intersiteL2Stretch":"no","ipLearning":"yes","ipv6McastAllow":"no","limitIpLearnToSubnets":"no","llAddr":"::","mac":"00:22:BD:F8:19:FF","mcastAllow":"no","multiDstPktAct":"bd-flood","name":"inb","nameAlias":"","ownerKey":"","ownerTag":"","type":"regular","unicastRoute":"yes","unkMacUcastAct":"proxy","unkMcastAct":"flood","v6unkMcastAct":"flood","vmac":"not-applicable"},"children":[{"fvRsMldsn":{"attributes":{"annotation":"","tnMldSnoopPolName":""}}},{"fvRsIgmpsn":{"attributes":{"annotation":"","tnIgmpSnoopPolName":""}}},{"fvRsCtx":{"attributes":{"annotation":"","tnFvCtxName":"inb"}}},{"fvRsBdToEpRet":{"attributes":{"annotation":"","resolveAct":"resolve","tnFvEpRetPolName":""}}},{"fvRsBDToNdP":{"attributes":{"annotation":"","tnNdIfPolName":""}}}]}},{"aaaDomainRef":{"attributes":{"annotation":"","descr":"","name":"mgmt","nameAlias":"","ownerKey":"","ownerTag":""}}}]}}]}
+{
+    "totalCount": "1",
+    "imdata": [
+        {
+            "fvTenant": {
+                "attributes": {
+                    "annotation": "",
+                    "descr": "",
+                    "dn": "uni/tn-mgmt",
+                    "name": "mgmt",
+                    "nameAlias": "",
+                    "ownerKey": "",
+                    "ownerTag": ""
+                },
+                "children": [
+                    {
+                        "vzOOBBrCP": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "intent": "install",
+                                "name": "default",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "prio": "unspecified",
+                                "scope": "context",
+                                "targetDscp": "unspecified"
+                            },
+                            "children": [
+                                {
+                                    "vzSubj": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "consMatchT": "AtleastOne",
+                                            "descr": "",
+                                            "name": "oob-default-subj",
+                                            "nameAlias": "",
+                                            "prio": "unspecified",
+                                            "provMatchT": "AtleastOne",
+                                            "revFltPorts": "yes",
+                                            "targetDscp": "unspecified"
+                                        },
+                                        "children": [
+                                            {
+                                                "vzRsSubjFiltAtt": {
+                                                    "attributes": {
+                                                        "action": "permit",
+                                                        "annotation": "",
+                                                        "directives": "",
+                                                        "priorityOverride": "default",
+                                                        "tnVzFilterName": "https-filter"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "vzRsSubjFiltAtt": {
+                                                    "attributes": {
+                                                        "action": "permit",
+                                                        "annotation": "",
+                                                        "directives": "",
+                                                        "priorityOverride": "default",
+                                                        "tnVzFilterName": "http-filter"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "vzRsSubjFiltAtt": {
+                                                    "attributes": {
+                                                        "action": "permit",
+                                                        "annotation": "",
+                                                        "directives": "",
+                                                        "priorityOverride": "default",
+                                                        "tnVzFilterName": "ntp-filter"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "vzRsSubjFiltAtt": {
+                                                    "attributes": {
+                                                        "action": "permit",
+                                                        "annotation": "",
+                                                        "directives": "",
+                                                        "priorityOverride": "default",
+                                                        "tnVzFilterName": "icmp-filter"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "vzRsSubjFiltAtt": {
+                                                    "attributes": {
+                                                        "action": "permit",
+                                                        "annotation": "",
+                                                        "directives": "",
+                                                        "priorityOverride": "default",
+                                                        "tnVzFilterName": "ssh-filter"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "vzRsSubjFiltAtt": {
+                                                    "attributes": {
+                                                        "action": "permit",
+                                                        "annotation": "",
+                                                        "directives": "",
+                                                        "priorityOverride": "default",
+                                                        "tnVzFilterName": "snmp-filter"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "vnsSvcCont": {
+                            "attributes": {
+                                "annotation": ""
+                            }
+                        }
+                    },
+                    {
+                        "mgmtMgmtP": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "default",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "mgmtOoB": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "",
+                                            "name": "default",
+                                            "nameAlias": "",
+                                            "prio": "unspecified"
+                                        },
+                                        "children": [
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.209/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-102",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.208/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-101",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.210/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-103",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.207/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-202",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.201/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-1",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.206/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-201",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBStNode": {
+                                                    "attributes": {
+                                                        "addr": "10.237.96.211/27",
+                                                        "annotation": "",
+                                                        "descr": "",
+                                                        "gw": "10.237.96.193",
+                                                        "tDn": "topology/pod-1/node-104",
+                                                        "v6Addr": "::",
+                                                        "v6Gw": "::"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "mgmtRsOoBProv": {
+                                                    "attributes": {
+                                                        "annotation": "",
+                                                        "prio": "unspecified",
+                                                        "tnVzOOBBrCPName": "default"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "mgmtExtMgmtEntity": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "default",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            }
+                        }
+                    },
+                    {
+                        "vzFilter": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "snmp-filter",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "161",
+                                            "dToPort": "162",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "snmp",
+                                            "nameAlias": "",
+                                            "prot": "udp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "vzFilter": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "ntp-filter",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "123",
+                                            "dToPort": "123",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "ntp",
+                                            "nameAlias": "",
+                                            "prot": "udp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "vzFilter": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "icmp-filter",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "unspecified",
+                                            "dToPort": "unspecified",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "icmp",
+                                            "nameAlias": "",
+                                            "prot": "icmp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "vzFilter": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "https-filter",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "https",
+                                            "dToPort": "https",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "https",
+                                            "nameAlias": "",
+                                            "prot": "tcp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "vzFilter": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "http-filter",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "http",
+                                            "dToPort": "http",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "http",
+                                            "nameAlias": "",
+                                            "prot": "tcp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "vzFilter": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "ssh-filter",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            },
+                            "children": [
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "22",
+                                            "dToPort": "22",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "ssh",
+                                            "nameAlias": "",
+                                            "prot": "tcp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "vzEntry": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "applyToFrag": "no",
+                                            "arpOpc": "unspecified",
+                                            "dFromPort": "4200",
+                                            "dToPort": "4200",
+                                            "descr": "",
+                                            "etherT": "ip",
+                                            "icmpv4T": "unspecified",
+                                            "icmpv6T": "unspecified",
+                                            "matchDscp": "unspecified",
+                                            "name": "ssh-via-web",
+                                            "nameAlias": "",
+                                            "prot": "tcp",
+                                            "sFromPort": "unspecified",
+                                            "sToPort": "unspecified",
+                                            "stateful": "no",
+                                            "tcpRules": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvRsTenantMonPol": {
+                            "attributes": {
+                                "annotation": "",
+                                "tnMonEPGPolName": ""
+                            }
+                        }
+                    },
+                    {
+                        "fvCtx": {
+                            "attributes": {
+                                "annotation": "",
+                                "bdEnforcedEnable": "no",
+                                "descr": "",
+                                "ipDataPlaneLearning": "enabled",
+                                "knwMcastAct": "permit",
+                                "name": "oob",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "pcEnfDir": "ingress",
+                                "pcEnfPref": "enforced"
+                            },
+                            "children": [
+                                {
+                                    "fvRsVrfValidationPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnL3extVrfValidationPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "vzAny": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "",
+                                            "matchT": "AtleastOne",
+                                            "name": "",
+                                            "nameAlias": "",
+                                            "prefGrMemb": "disabled"
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsOspfCtxPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnOspfCtxPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtxToEpRet": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnFvEpRetPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtxToExtRouteTagPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnL3extRouteTagPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBgpCtxPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnBgpCtxPolName": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvCtx": {
+                            "attributes": {
+                                "annotation": "",
+                                "bdEnforcedEnable": "no",
+                                "descr": "",
+                                "ipDataPlaneLearning": "enabled",
+                                "knwMcastAct": "permit",
+                                "name": "inb",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "pcEnfDir": "ingress",
+                                "pcEnfPref": "enforced"
+                            },
+                            "children": [
+                                {
+                                    "fvRsVrfValidationPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnL3extVrfValidationPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "vzAny": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "descr": "",
+                                            "matchT": "AtleastOne",
+                                            "name": "",
+                                            "nameAlias": "",
+                                            "prefGrMemb": "disabled"
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsOspfCtxPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnOspfCtxPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtxToEpRet": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnFvEpRetPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtxToExtRouteTagPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnL3extRouteTagPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBgpCtxPol": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnBgpCtxPolName": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvBD": {
+                            "attributes": {
+                                "OptimizeWanBandwidth": "no",
+                                "annotation": "",
+                                "arpFlood": "no",
+                                "descr": "",
+                                "epClear": "no",
+                                "epMoveDetectMode": "",
+                                "hostBasedRouting": "no",
+                                "intersiteBumTrafficAllow": "no",
+                                "intersiteL2Stretch": "no",
+                                "ipLearning": "yes",
+                                "ipv6McastAllow": "no",
+                                "limitIpLearnToSubnets": "no",
+                                "llAddr": "::",
+                                "mac": "00:22:BD:F8:19:FF",
+                                "mcastAllow": "no",
+                                "multiDstPktAct": "bd-flood",
+                                "name": "inb",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "type": "regular",
+                                "unicastRoute": "yes",
+                                "unkMacUcastAct": "proxy",
+                                "unkMcastAct": "flood",
+                                "v6unkMcastAct": "flood",
+                                "vmac": "not-applicable"
+                            },
+                            "children": [
+                                {
+                                    "fvRsMldsn": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnMldSnoopPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsIgmpsn": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnIgmpSnoopPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtx": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnFvCtxName": "inb"
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBdToEpRet": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "resolveAct": "resolve",
+                                            "tnFvEpRetPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBDToNdP": {
+                                        "attributes": {
+                                            "annotation": "",
+                                            "tnNdIfPolName": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "aaaDomainRef": {
+                            "attributes": {
+                                "annotation": "",
+                                "descr": "",
+                                "name": "mgmt",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": ""
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
